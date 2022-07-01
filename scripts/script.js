@@ -5,10 +5,11 @@ function getAge() {
   
     let finalAge =  Math.abs(age.getUTCFullYear() - 1970)
 
-    let span = document.querySelector('span');
+    let span = document.querySelector('#age');
     span.innerHTML = finalAge
 }
 
 getAge()
-setInterval(getAge, 5 * 60 * 1000)
 twemoji.parse(document.body)
+setInterval(getAge, 5 * 60 * 1000)
+easterEgg(twemoji.parse('🇬🇧'), twemoji.parse('🐱'), twemoji.parse('🇺🇦'))
