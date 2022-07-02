@@ -11,7 +11,9 @@ function easterEgg(en, cat, uke) {
         }
         if (clicks == 9) {
             flag.innerHTML = uke
-            return window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+            let audio = new Audio('../assets/rick.mp3')
+            audio.play()
+            clicks = 0
         }
         clicks++
     })
