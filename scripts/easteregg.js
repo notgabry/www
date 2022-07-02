@@ -3,13 +3,13 @@ let clicks = 0
 function easterEgg(en, cat, uke) {
     let flag = document.querySelector('#italianFlag')
     flag.addEventListener('click', () => {
-        if (clicks == 1) {
+        if (clicks == 0) {
             flag.innerHTML = en
         }
-        if (clicks == 4) {
+        if (clicks == 3) {
             flag.innerHTML = cat
         }
-        if (clicks == 9) {
+        if (clicks == 5) {
             flag.innerHTML = uke
             let audio = new Audio('../assets/rick.mp3')
             audio.play()
