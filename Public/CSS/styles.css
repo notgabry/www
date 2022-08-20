@@ -17,7 +17,7 @@
 
 #boxSuprema {
     position: absolute;
-    display: flex;
+    display: block;
     top: 10%;
     left: calc(50% - 40%);
     width: 80%;
@@ -52,7 +52,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 2.5vh;
     text-align: center;
-    text-color: #e0def4;
+    color: #e0def4;
 }
 
 .btn {
