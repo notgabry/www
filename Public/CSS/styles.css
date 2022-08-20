@@ -40,7 +40,7 @@
     position: relative;
     display: block;
     width: 100%;
-    border: solid 0.5px #c4a7e7;
+    border: solid 0.5px #e0def4;
     border-radius: 100%;
 }
 
@@ -67,6 +67,7 @@
     justify-content: center;
     align-items: center; 
     cursor: pointer;
+    border: solid 1px #e0def4;
     transition: all ease-in-out 0.3s;
 }
 
