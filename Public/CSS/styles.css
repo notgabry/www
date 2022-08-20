@@ -17,7 +17,7 @@
 
 #boxSuprema {
     position: absolute;
-    display: block;
+    display: flex;
     top: 10%;
     left: calc(50% - 40%);
     width: 80%;
