@@ -52,6 +52,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 2.5vh;
     text-align: center;
+    text-color: #e0def4;
 }
 
 .btn {
@@ -84,7 +85,7 @@ a {
     color: black;
 }
 
-img .emoji {
+img.emoji {
     height: 1em;
     width: 1em;
     margin: 0 .05em 0 .1em;
