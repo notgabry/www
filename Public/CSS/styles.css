@@ -12,8 +12,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: -webkit-linear-gradient(#AFBEFA, #FFAFDE);
-    background-repeat: no-repeat;
+    background-color: #222138;
 }
  
 
@@ -51,6 +50,7 @@
     top: calc(50% - 10%);
     width: 60%;
     height: 20%;
+    color: #fff;
     font-family: 'Poppins', sans-serif;
     font-size: 2.5vh;
     text-align: center;
@@ -61,8 +61,9 @@
     display: inline-flex;
     width: 15vh;
     height: 25%;
-    background-color: #AFBEFA;
+    background-color: #222138;
     margin-top: 5%;
+    color: #fff;
     border-radius: 8px;
     justify-content: center;
     align-items: center; 
@@ -78,13 +79,14 @@
     margin-right: 0.6vh;
 }
 .btn:hover {
-    background-color: #9aa9e6;
+    background-color: #fff;
+    color: #222138;
 }
 
 a {
     text-decoration: none;
-    color: black;
 }
+
 img.emoji {
     height: 1em;
     width: 1em;
