@@ -11,7 +11,7 @@ function easterEgg(en, cat, uke) {
         }
         if (clicks == 5) {
             flag.innerHTML = uke
-            let audio = new Audio('../assets/rick.mp3')
+            let audio = new Audio('../Assets/rick.mp3')
             audio.play()
             clicks = 0
         }
