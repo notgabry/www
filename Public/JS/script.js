@@ -12,4 +12,4 @@ function getAge() {
 getAge()
 twemoji.parse(document.body)
 setInterval(getAge, 5 * 60 * 1000)
-easterEgg(twemoji.parse('🇬🇧'), twemoji.parse('🐱'), twemoji.parse('🇺🇦'))
+easterEgg(twemoji.parse('🇬🇧'), twemoji.parse('🐱'), twemoji.parse('🇮🇹'))
