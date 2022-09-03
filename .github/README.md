@@ -1,7 +1,7 @@
 <div align="center">
 
 # `gabry.ga`
-### 🍿 My Personal Portfolio 🍪
+### 🍿 My Personal Website 🍪
 
 </div>
 
