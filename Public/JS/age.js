@@ -1,5 +1,5 @@
 const age = () => {
-    let date = new Date(2007, 10, 12)
+    let date = new Date(2007, 9, 12)
     let diffYear = Date.now() - date.getTime()
     let age = new Date(diffYear);
   
