@@ -5,7 +5,7 @@ const age = () => {
   
     let finalAge =  Math.abs(age.getUTCFullYear() - 1970)
 
-    let span = document.querySelector('#age');
+    let span = document.querySelector('#age')
     span.innerHTML = finalAge
 }
 
