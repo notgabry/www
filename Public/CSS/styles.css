@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Galindo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+
+:root {
+    --bg-color: #222138;
+    --img-bg: #e0def4;
+    --text-color: #fff;
+    --snow-color: #D7FFFF;
+}
 
 * {
     text-decoration: none;
-    user-select: none;
 }
 
 #bgAll {
@@ -17,7 +18,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #222138;
+    background-color: var(--bg-color);
 }
  
 
@@ -44,7 +45,7 @@
     position: relative;
     display: block;
     width: 100%;
-    border: solid 0.5px #e0def4;
+    border: solid 0.5px var(--img-bg);
     border-radius: 100%;
 }
 
@@ -55,7 +56,7 @@
     top: calc(50% - 10%);
     width: 60%;
     height: 20%;
-    color: #fff;
+    color: var(--text-color);
     font-family: 'Poppins', sans-serif;
     font-size: 2.5vh;
     text-align: center;
@@ -68,24 +69,31 @@
     height: 25%;
     background-color: #222138;
     margin-top: 5%;
-    color: #fff;
+    color: var(--text-color);
     border-radius: 8px;
     justify-content: center;
     align-items: center; 
     cursor: pointer;
-    border: solid 1px #e0def4;
+    border: solid 1px var(--img-bg);
     transition: all ease-in-out 0.3s;
+    margin-right: 1vh;
 }
 
 .btn i {
     margin-right: 1vh;
 }
+
 .btn:nth-child(1) i {
     margin-right: 0.6vh;
 }
+
 .btn:hover {
-    background-color: #fff;
-    color: #222138;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+.btn:nth-child(3) {
+    margin-right: 0;
 }
 
 a {
@@ -101,4 +109,65 @@ img.emoji {
 
 #comma {
     cursor: pointer;
+}
+
+.fallingSnow {
+    height: var(--w);
+    width: var(--w);
+    background-color: var(--snow-color);
+    border-radius: 100%;
+    opacity: var(--o);
+}
+
+#snowflakes {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    pointer-events:none;
+}
+
+.snowflake {
+    font-size: 1em;
+    flex: 1;
+    position: relative;
+    top: -10%;
+    animation: snowflakes-fall 10s linear, snowflakes-shake 3s ease-in-out;
+    animation-delay: var(--d);
+    animation-iteration-count: infinite;
+}
+
+#linearColor {
+    position: fixed;
+    display: block;
+    background-color: var(--img-bg);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1.5vh;
+}
+
+@keyframes snowflakes-fall {
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes snowflakes-shake {
+    50% {
+        transform: translateX(80px);
+    }
+}
+
+::-moz-selection {
+    color: var(--bg-color);
+    background: var(--text-color);
+}
+  
+::selection {
+    color: var(--bg-color);
+    background: var(--text-color);
 }
