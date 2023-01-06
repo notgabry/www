@@ -46,6 +46,11 @@
 }
 
 #avatar {
+    -webkit-user-drag: none;
+    -moz-user-select: none; 
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
     position: relative;
     display: block;
     width: 100%;
@@ -90,6 +95,11 @@ a {
 }
 
 img.emoji {
+    -webkit-user-drag: none;
+    -moz-user-select: none; 
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
     height: 1em;
     width: 1em;
     margin: 0 .05em 0 .1em;
