@@ -5,6 +5,7 @@
     --img-bg: #e0def4;
     --text-color: #fff;
     --snow-color: #D7FFFF;
+    --btn-color: #9EB9C0;
 }
 
 * {
@@ -18,7 +19,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--bg-color);
+    background-image: url(/Public/Assets/bg.svg);
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
  
 
@@ -65,29 +69,21 @@
 .btn {
     position: relative;
     display: inline-flex;
-    width: 15vh;
+    width: 6vh;
     height: 25%;
     margin-top: 5%;
     color: var(--text-color);
     justify-content: center;
     align-items: center; 
     cursor: pointer;
-    border: solid 1px var(--img-bg);
     margin-right: 1vh;
-    background: linear-gradient(to right, var(--text-color) 50%, var(--bg-color) 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
-    transition: all .5s ease-out;
-}
-
-.btn i {
-    margin-right: 1vh;
+    transition: all .3s ease-in-out;
 }
 
 .btn:hover {
-    background-position: left bottom;
-    color: var(--bg-color);
+    color: var(--btn-color);
 }
+
 
 a {
     text-decoration: none;
@@ -98,10 +94,6 @@ img.emoji {
     width: 1em;
     margin: 0 .05em 0 .1em;
     vertical-align: -0.1em;
-}
-
-#comma {
-    cursor: pointer;
 }
 
 .fallingSnow {

@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --bg-color: #222138;
+    --img-bg: #e0def4;
+    --text-color: #fff;
+    --snow-color: #D7FFFF;
+}
+
+* {
+    text-decoration: none;
+}
+
+#bgAll {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/Public/Assets/bg.svg);
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    position: relative;
+    display: block;
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 8vh;
+}
+
+h3 {
+    position: relative;
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3vh;
+    color: var(--text-color);
+}
+
+#container {
+    position: relative;
+    display: block;
+    text-align: center;
+    top: 5em;
+}
+
+::-moz-selection {
+    color: var(--bg-color);
+    background: var(--text-color);
+}
+  
+::selection {
+    color: var(--bg-color);
+    background: var(--text-color);
+}
