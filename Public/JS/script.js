@@ -5,7 +5,7 @@ let secondRow = []
 twemoji.parse(document.body)
 
 const rick = (en, cat, stop) => {
-    let rick = new Audio('/Public/Assets/rick.mp3')
+    let rick = new Audio('/Public/Assets/Sounds/rick.mp3')
     let flag = document.querySelector('#italianFlag')
     flag.addEventListener('click', () => {
         if (clicks == 0) flag.innerHTML = en

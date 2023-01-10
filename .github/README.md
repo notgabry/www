@@ -1,12 +1,15 @@
 <div align="center">
 
-# `gabry.ga`
-### 🍿 My Personal Website 🍪
+## `gabry.ga`
+🍿 My Personal Website 🍪
 
 </div>
 
 
-### 🎯 Self Hosting 
-I won't provide any information about Self-Hosting.  
-If you're an expert you can host it (without my help) but remind to mention me (@NotGabry) in your website.  
-💙 10ks for understanding.
+### 🎯 Hosting
+To host my website i used [`Vercel`](https://vercel.com)  
+
+### 💳 Credits
+1️⃣ [Twitter Emojis](https://twemoji.twitter.com/)  
+2️⃣ [Font Awesome](https://fontawesome.com)  
+3️⃣ [Canvas Confetti](https://www.npmjs.com/package/canvas-confetti)  

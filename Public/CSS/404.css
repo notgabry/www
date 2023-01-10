@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('/Public/Fonts/ThicccBoy/font.css');
 
 :root {
     --bg-color: #222138;
@@ -18,7 +18,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(/Public/Assets/bg.svg);
+    background-image: url(/Public/Assets/Images/bg.svg);
     background-position: 0;
     background-repeat: no-repeat;
     background-size: cover;
@@ -28,14 +28,14 @@ h1 {
     position: relative;
     display: block;
     color: var(--text-color);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'ThicccBoySemiBold';
     font-size: 8vh;
 }
 
 h3 {
     position: relative;
     display: block;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'ThicccBoyMedium';
     font-size: 3vh;
     color: var(--text-color);
 }
