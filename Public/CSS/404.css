@@ -7,11 +7,7 @@
     --snow-color: #D7FFFF;
 }
 
-* {
-    text-decoration: none;
-}
-
-#bgAll {
+#bg {
     position: absolute;
     display: block;
     top: 0;
@@ -28,14 +24,14 @@ h1 {
     position: relative;
     display: block;
     color: var(--text-color);
-    font-family: 'ThicccBoySemiBold';
+    font-family: 'Inter', sans-serif;
     font-size: 8vh;
 }
 
 h3 {
     position: relative;
     display: block;
-    font-family: 'ThicccBoyMedium';
+    font-family: 'Roboto', sans-serif;
     font-size: 3vh;
     color: var(--text-color);
 }
@@ -51,7 +47,7 @@ h3 {
     color: var(--bg-color);
     background: var(--text-color);
 }
-  
+
 ::selection {
     color: var(--bg-color);
     background: var(--text-color);
