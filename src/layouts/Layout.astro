@@ -7,11 +7,14 @@ const { title, stylesheet } = Astro.props
     <head>
         <meta charset="utf-8" />
         <title>{title}</title>
-        <link rel="stylesheet" href={`/Public/CSS/${stylesheet || 'styles'}.css`} />
+        <link
+            rel="stylesheet"
+            href={`/public/CSS/${stylesheet || 'styles'}.css`}
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="generator" content={Astro.generator} />
-        <link rel="icon" href="/Public/Assets/Images/gabry-icon.png" />
-        <link rel="shortcut icon" href="/Public/Assets/Images/gabry-icon.png" />
+        <link rel="icon" href="/public/Assets/Images/gabry-icon.png" />
+        <link rel="shortcut icon" href="/public/Assets/Images/gabry-icon.png" />
 
         <meta property="og:title" content="NotGabry" />
         <meta property="og:description" content="Minimalist" />
@@ -19,7 +22,7 @@ const { title, stylesheet } = Astro.props
 
         <meta
             property="og:image"
-            content="/Public/Assets/Images/screenshot.png"
+            content="/public/Assets/Images/screenshot.png"
         />
         <meta property="og:image:width" content="960" />
         <meta property="og:image:height" content="540" />
