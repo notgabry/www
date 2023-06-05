@@ -1,0 +1,37 @@
+---
+import Layout from '@layouts/Layout.astro'
+
+const date = new Date(2007, 9, 12)
+const g = new Date(Date.now() - date.getTime())
+const links = Astro.url.host
+
+const age = Math.abs(g.getUTCFullYear() - 1970)
+---
+
+<Layout title="@NotGabry">
+    <header>
+        <h1>@NotGabry</h1>
+        <p>
+            <img
+                draggable="false"
+                class="emoji"
+                alt="🍪"
+                src="https://twemoji.maxcdn.com/v/14.0.2/72x72/1f36a.png"
+            />
+            I'm a {age} years old guy who likes
+            <strong>cookies</strong>
+        </p>
+        <a href={`https://i.${links}/discord`} target="_blank">
+            <button class="btn"><i class="fa-brands fa-discord"></i></button>
+        </a>
+        <a href={`https://i.${links}/github`} target="_blank">
+            <button class="btn"><i class="fa-brands fa-github"></i></button>
+        </a>
+        <a href={`https://i.${links}/spotify`} target="_blank">
+            <button class="btn"><i class="fa-brands fa-spotify"></i></button>
+        </a>
+        <a href={`https://i.${links}/twitter`} target="_blank" id="last">
+            <button class="btn"><i class="fa-brands fa-twitter"></i></button>
+        </a>
+    </header>
+</Layout>
