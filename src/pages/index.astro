@@ -3,7 +3,7 @@ import Layout from '@layouts/Layout.astro'
 
 const date = new Date(2007, 9, 12)
 const g = new Date(Date.now() - date.getTime())
-const links = Astro.url.host
+const links = 'gabryy.me' //TODO: check the domain automatically
 
 const age = Math.abs(g.getUTCFullYear() - 1970)
 ---
