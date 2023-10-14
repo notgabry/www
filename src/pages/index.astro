@@ -1,37 +1,51 @@
 ---
 import Layout from '@layouts/Layout.astro'
+import Head from '@components/Head.astro'
+import Mark from '@components/Mark.astro'
+import Presence from '@components/Presence.svelte'
+import GenerateDynDate from '@modules/GenerateDynDate'
 
-const date = new Date(2007, 9, 12)
-const g = new Date(Date.now() - date.getTime())
-const links = 'gabryy.me' //TODO: check the domain automatically
-
-const age = Math.abs(g.getUTCFullYear() - 1970)
+const age = GenerateDynDate(new Date(2007, 9, 12))
+const linux = GenerateDynDate(new Date(2021, 5, 11))
 ---
 
-<Layout title="@NotGabry">
-    <header>
-        <h1>@notgabry</h1>
-        <p>
-            <img
-                draggable="false"
-                class="emoji"
-                alt="🍪"
-                src="https://twemoji.maxcdn.com/v/14.0.2/72x72/1f36a.png"
-            />
-            I'm a {age} years old guy who likes
-            <strong>cookies</strong>
-        </p>
-        <a href={`https://i.${links}/discord`} target="_blank">
-            <button class="btn"><i class="fa-brands fa-discord"></i></button>
-        </a>
-        <a href={`https://i.${links}/github`} target="_blank">
-            <button class="btn"><i class="fa-brands fa-github"></i></button>
-        </a>
-        <a href={`https://i.${links}/spotify`} target="_blank">
-            <button class="btn"><i class="fa-brands fa-spotify"></i></button>
-        </a>
-        <a href={`https://i.${links}/twitter`} target="_blank" id="last">
-            <button class="btn"><i class="fa-brands fa-twitter"></i></button>
-        </a>
-    </header>
+<Layout title="notgabry">
+    <main class="mt-10 mx-6">
+        <header class="text-center mb-9 font-young-serif">
+            <Head description="🖐hello world!" />
+            <div class="text-p-text pt-6 text-center">
+                <a href="https://inertiah.uno/github" target="_blank" class="mr-4 px-4 hover:underline cursor-pointer inline-block my-2"><i class="fa-solid fa-location-arrow mr-[1vh]"></i>GitHub</a>
+                <a href="https://inertiah.uno/x" target="_blank" class="mr-4 px-4 hover:underline cursor-pointer inline-block my-2"><i class="fa-solid fa-location-arrow mr-[1vh]"></i>x.com</a>
+                <a href="https://inertiah.uno/discord" target="_blank" class="mr-4 px-4 hover:underline cursor-pointer inline-block my-2"><i class="fa-solid fa-location-arrow mr-[1vh]"></i>Discord</a>
+                <a href="mailto:inbox@gabryy.me" target="_blank" class="mr-4 px-4 hover:underline cursor-pointer inline-block my-2"><i class="fa-solid fa-location-arrow mr-[1vh]"></i>Mail</a>
+            </div>
+        </header>
+
+        <section class="mt-6">
+            <h3 class="font-young-serif text-2xl text-p-text underline decoration-wavy decoration-p-underline">About Me</h3>
+            <p class="font-josefin text-p-text">
+                I'm a {age}-year-old developer from Italy. Ever since I was little I've always been passionate about computers and how they operate, now I'm learning everday new technologies or programming languages, like <Mark>Go</Mark> and <Mark>Rust</Mark> the two programmming languages I am currently focussing on.
+            </p>
+        </section>
+
+        <section class="mt-6">
+            <h3 class="font-young-serif text-2xl text-p-text underline decoration-wavy decoration-p-underline">Interests</h3>
+            <p class="font-josefin text-p-text">
+                For performance related problems I switched to linux {linux} years ago and even if now I have Windows on dual-boot (for playing videogames) I never came back to Windows as my main os. In this lil period of time i tried different linux distros like <Mark>Ubuntu 20</Mark> (my first ever distro), <Mark>Manjaro</Mark>, <Mark>Arch</Mark>, <Mark>Kali</Mark> and <Mark>Linux Mint</Mark> the one I'm using right now.
+                <br />
+                 In my spare time when I want to relax I play videogames like <Mark>Valorant</Mark> or <Mark>Sea of Thieves</Mark>
+            </p>
+            <Presence client:load />
+        </section>
+
+        <section class="mt-6">
+            <h3 class="font-young-serif text-2xl text-p-text underline decoration-wavy decoration-p-underline">Skills</h3>
+            <p class="font-josefin text-p-text">I've lots of experience with <Mark>JavaScript</Mark> and <Mark>TypeScript</Mark> also I practiced <Mark>Python</Mark> for over a year, I'm recently moving my attention to <Mark>Go</Mark> and <Mark>Rust</Mark>.</p>
+        </section>
+    </main>
+
+    <hr class="my-6 border-gray-600 mx-6" />
+    <footer class="mx-6 font-josefin font-bold mb-10 text-gray-500">
+        <p class="text-lg">Code under <a href="https://github.com/NotGabry/gabryy.me/blob/main/LICENSE" class="hover:underline">MIT</a> license. <br />Made with ☕ by a random human being</p>
+    </footer>
 </Layout>

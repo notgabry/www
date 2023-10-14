@@ -8,10 +8,7 @@
 
 ### 🎯 Hosting
 
-To host my website i used [`Vercel`](https://vercel.com)
-
-### 💳 Used in this project
-
-1️⃣ [Twitter Emojis](https://twemoji.twitter.com/)  
+I used [`vercel`](https://vercel.com) as hosting and the technologies below build this website.  
+1️⃣ [Tailwind](https://tailwindcss.com/)  
 2️⃣ [Font Awesome](https://fontawesome.com)  
 3️⃣ [Astro](https://astro.build)

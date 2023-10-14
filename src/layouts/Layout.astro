@@ -1,47 +1,29 @@
 ---
-const { title, stylesheet } = Astro.props
+const { title } = Astro.props
+import '../styles/input.css'
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <title>{title}</title>
-        <link rel="stylesheet" href={`/CSS/${stylesheet || 'styles'}.css`} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content={Astro.generator} />
-        <link rel="icon" href="/Assets/Images/gabry-icon.png" />
-        <link rel="shortcut icon" href="/Assets/Images/gabry-icon.png" />
+        <link rel="icon" href="https://cdn.inertiah.uno/gabry-icon.png" />
+        <link rel="shortcut icon" href="https://cdn.inertiah.uno/gabry-icon.png" />
 
         <meta property="og:title" content="NotGabry" />
-        <meta property="og:description" content="Minimalist" />
+        <meta property="og:description" content="Minimalism ❤" />
         <meta property="theme-color" content="#A9A7F1" />
-
-        <meta property="og:image" content="/Assets/Images/screenshot.png" />
-        <meta property="og:image:width" content="960" />
-        <meta property="og:image:height" content="540" />
-        <meta property="og:image:type" content="image/png" />
-        <meta name="twitter:card" content="summary_large_image" />
-
-        <link
-            rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v6.4.0/css/all.css"
-        />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
-            rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Poppins&family=Young+Serif&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" />
     </head>
 
-    <body>
-        <div id="bg"></div>
+    <body class="bg-p-bg max-w-xl mx-auto font-young-seri">
         <slot />
     </body>
 </html>
