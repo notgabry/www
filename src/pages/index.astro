@@ -7,6 +7,8 @@ import GenerateDynDate from '@modules/GenerateDynDate'
 
 const age = GenerateDynDate(new Date(2007, 9, 12))
 const linux = GenerateDynDate(new Date(2021, 5, 11))
+
+const commit = await fetch('https://api.github.com/repos/notgabry/gabryy.me/commits/main').then((a) => a.json())
 ---
 
 <Layout title="notgabry">
@@ -46,6 +48,7 @@ const linux = GenerateDynDate(new Date(2021, 5, 11))
 
     <hr class="my-6 border-gray-600 mx-6" />
     <footer class="mx-6 font-josefin font-bold mb-10 text-gray-500">
-        <p class="text-lg">Code under <a href="https://github.com/NotGabry/gabryy.me/blob/main/LICENSE" class="hover:underline">MIT</a> license. <br />Made with ☕ by a random human being</p>
+        <p class="text-md">📃Code under <a href="https://github.com/NotGabry/gabryy.me/blob/main/LICENSE" class="hover:underline decoration-dashed">MIT</a> license.</p>
+        <p class="text-md">🍁GitHub Commit <a class="decoration-dashed hover:underline" href={commit.html_url}>{commit.sha}.</a></p>
     </footer>
 </Layout>

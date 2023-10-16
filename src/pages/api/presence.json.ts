@@ -15,6 +15,9 @@ export const GET: APIRoute = async () => {
             details: b.data.activities[0]?.details || null,
             assets: {
                 large_image: b.data.spotify?.album_art_url ?? Image(b)
+            },
+            timestamps: {
+                start: b.data.activities[0]?.timestamps.start || 0
             }
         },
         username: b.data.discord_user.username

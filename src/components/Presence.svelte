@@ -1,5 +1,6 @@
 <script lang="ts">
     import { fade } from 'svelte/transition'
+    import Elapsed from '@components/Elapsed.svelte'
     import { type PresenceAPI } from '@modules/Presence'
     import { onMount } from 'svelte'
 
@@ -25,7 +26,13 @@
         </div>
         <div class="flex flex-col mx-4 w-fit h-full truncate">
             <h4 class="text-xl font-bold">{data?.activity.name || 'Nothing'}</h4>
-            <p class="text-xs">{data?.activity.details || 'Chilling with the boys'}</p>
+            {#if data?.activity.details}
+                <p class="text-xs">{data?.activity.details}</p>
+            {:else if data?.activity.timestamps && data.activity.timestamps.start != 0}
+                <Elapsed date={new Date(data?.activity.timestamps.start)} />
+            {:else}
+                <p class="text-xs">Just chilling with the boys</p>
+            {/if}
 
             {#if data?.activity.state}
                 <p class="text-xs">{data?.activity.state}</p>
