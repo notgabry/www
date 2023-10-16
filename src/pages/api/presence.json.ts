@@ -1,5 +1,5 @@
 export const prerender = false
-import type { Presence } from '@modules/Presence'
+import type { Presence, PresenceAPI } from '@modules/Presence'
 import type { APIRoute } from 'astro'
 import Image from '@modules/Presence'
 
@@ -7,7 +7,7 @@ export const GET: APIRoute = async () => {
     const a = await fetch('https://api.lanyard.rest/v1/users/683423964227436576') // TODO: no dependencies from lanyard
     const b: Presence = await a.json()
 
-    const data = {
+    const data: PresenceAPI = {
         activity: {
             application_id: b.data.activities[0]?.application_id || '0',
             name: b.data.activities[0]?.name,
@@ -18,7 +18,8 @@ export const GET: APIRoute = async () => {
             },
             timestamps: {
                 start: b.data.activities[0]?.timestamps.start || 0
-            }
+            },
+            status: b.data.discord_status
         },
         username: b.data.discord_user.username
     }

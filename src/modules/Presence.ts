@@ -23,6 +23,7 @@ export interface Presence {
         spotify: {
             album_art_url: string
         }
+        discord_status: 'online' | 'idle' | 'dnd' | 'offline'
     }
 }
 
@@ -30,14 +31,15 @@ export interface PresenceAPI {
     activity: {
         application_id: string
         name: string
-        state: string
-        details: string
+        state: string | null
+        details: string | null
         assets: {
             large_image: string
         }
         timestamps: {
             start: number
         }
+        status: 'online' | 'idle' | 'dnd' | 'offline'
     }
     username: string
 }
