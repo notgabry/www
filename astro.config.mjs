@@ -5,7 +5,11 @@ import svelte from '@astrojs/svelte'
 
 // https://astro.build/config
 export default defineConfig({
-    adapter: vercel(),
+    adapter: vercel({
+        speedInsights: {
+            enabled: true
+        }
+    }),
     output: 'hybrid',
     integrations: [tailwind(), svelte()],
     publicDir: './public'
