@@ -1,20 +1,24 @@
 <script lang="ts">
-    export let url: string
     import { fade } from 'svelte/transition'
     import Elapsed from '@components/Elapsed.svelte'
     import { type PresenceAPI } from '@modules/Presence'
     import { onMount } from 'svelte'
 
     let data: PresenceAPI | undefined
+    let urls: string
     let isLoading = true
 
-    const PresenceJSON = async () => {
-        const a = await fetch(`${url}/api/presence.json`)
+    onMount(async () => {
+        const a = await fetch('/api/presence.json')
+        urls = a.url
         data = await a.json()
-    }
+    })
 
-    onMount(PresenceJSON)
-    setInterval(PresenceJSON, 60 * 1000)
+    setInterval(async () => {
+        if (!urls) return // life is hard
+        const a = await fetch(urls)
+        data = await a.json()
+    }, 2 * 60 * 1000)
 </script>
 
 <div class="h-20 max-w-md my-2 mx-auto block px-2 py-[0.45rem] text-gray-300 border-gray-700 border rounded-md relative">
