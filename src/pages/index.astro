@@ -16,10 +16,10 @@ const commit: { html_url: string; sha: string } = await fetch('https://api.githu
         <header class="text-center mb-9 font-young-serif">
             <Head description="🖐hello world!" />
             <div class="text-p-text pt-6 text-center">
-                <a href="https://inertiah.uno/github" target="_blank" class="mr-4 px-4 hover:underline cursor-pointer inline-block my-2"><i class="fa-solid fa-location-arrow mr-[1vh]"></i>GitHub</a>
-                <a href="https://inertiah.uno/x" target="_blank" class="mr-4 px-4 hover:underline cursor-pointer inline-block my-2"><i class="fa-solid fa-location-arrow mr-[1vh]"></i>x.com</a>
-                <a href="https://inertiah.uno/discord" target="_blank" class="mr-4 px-4 hover:underline cursor-pointer inline-block my-2"><i class="fa-solid fa-location-arrow mr-[1vh]"></i>Discord</a>
-                <a href="mailto:inbox@gabryy.me" target="_blank" class="mr-4 px-4 hover:underline cursor-pointer inline-block my-2"><i class="fa-solid fa-location-arrow mr-[1vh]"></i>Mail</a>
+                <a href="https://inertiah.uno/github" target="_blank" class="mr-6 px-2 cursor-pointer inline-block my-2"><i class="fa-brands fa-github"></i></a>
+                <a href="https://inertiah.uno/x" target="_blank" class="mr-6 px-2 cursor-pointer inline-block my-2"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://inertiah.uno/discord" target="_blank" class="mr-6 px-2 cursor-pointer inline-block my-2"><i class="fa-brands fa-discord"></i></a>
+                <a href="mailto:inbox@gabryy.me" target="_blank" class="px-2 cursor-pointer inline-block my-2"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </header>
 
@@ -48,7 +48,7 @@ const commit: { html_url: string; sha: string } = await fetch('https://api.githu
 
     <hr class="my-6 border-gray-600 mx-6" />
     <footer class="mx-6 font-josefin font-bold mb-10 text-gray-500">
-        <p class="text-md">📃 Code under <a href="https://github.com/NotGabry/gabryy.me/blob/main/LICENSE" class="hover:underline decoration-dashed">MIT</a> license.</p>
+        <p class="text-md">📃 Code under <a href="https://github.com/NotGabry/gabryy.me/blob/main/LICENSE" class='decoration-dashed"'>MIT</a> license.</p>
         <p class="text-md">🍁 GitHub Commit <a class="decoration-dashed hover:underline" href={commit.html_url}>{String(commit.sha).substring(0, 5)}.</a></p>
     </footer>
 </Layout>
