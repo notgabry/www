@@ -3,10 +3,16 @@ import Layout from '@layouts/Layout.astro'
 import Head from '@components/Head.astro'
 import Repo from '@components/Repo.astro'
 
-const commit: { html_url: string; sha: string } = await fetch('https://api.github.com/repos/notgabry/gabryy.me/commits/main').then((a) => a.json())
-const repos: { html_url: string; full_name: string; stargazers_count: number; language: string; description: string; fork: boolean; created_at: string }[] = await fetch('https://api.github.com/users/notgabry/repos').then((a) => a.json())
+const commit: { html_url: string; sha: string } = await fetch('https://api.github.com/repos/notgabry/gabryy.me/commits/main')
+    .then((a) => a.json())
+    .catch(() => {})
+
+let repos: { html_url: string; full_name: string; stargazers_count: number; language: string; description: string; fork: boolean; created_at: string }[] = await fetch('https://api.github.com/users/notgabry/repos?sort=stars&order=desc')
+    .then((a) => a.json())
+    .catch(() => [])
 
 if (repos.length) {
+    repos = repos.filter((a) => a.stargazers_count)
     repos.sort((a, b) => {
         const comparison = b.stargazers_count - a.stargazers_count
 
