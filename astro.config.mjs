@@ -12,5 +12,5 @@ export default defineConfig({
     }),
     output: 'hybrid',
     integrations: [tailwind(), svelte()],
-    publicDir: './public'
+    publicDir: './static'
 })

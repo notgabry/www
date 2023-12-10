@@ -15,10 +15,10 @@ const commit: { html_url: string; sha: string } = await fetch('https://api.githu
     <main class="mt-10 mx-6">
         <header class="text-center mb-9 font-young-serif">
             <Head description="🖐hello world!" />
-            <div class="text-p-text pt-6 text-center">
-                <a href="https://inertiah.uno/github" target="_blank" class="mr-6 px-2 cursor-pointer inline-block my-2"><i class="fa-brands fa-github"></i></a>
-                <a href="https://inertiah.uno/x" target="_blank" class="mr-6 px-2 cursor-pointer inline-block my-2"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://inertiah.uno/discord" target="_blank" class="mr-6 px-2 cursor-pointer inline-block my-2"><i class="fa-brands fa-discord"></i></a>
+            <div class="text-p-text pt-6 text-center space-x-6">
+                <a href="https://inertiah.uno/github" target="_blank" class="px-2 cursor-pointer inline-block my-2"><i class="fa-brands fa-github"></i></a>
+                <a href="https://inertiah.uno/x" target="_blank" class="px-2 cursor-pointer inline-block my-2"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://inertiah.uno/discord" target="_blank" class="px-2 cursor-pointer inline-block my-2"><i class="fa-brands fa-discord"></i></a>
                 <a href="mailto:inbox@gabryy.me" target="_blank" class="px-2 cursor-pointer inline-block my-2"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </header>
@@ -26,14 +26,14 @@ const commit: { html_url: string; sha: string } = await fetch('https://api.githu
         <section class="mt-6">
             <h3 class="font-young-serif text-2xl text-p-text underline decoration-wavy decoration-p-underline">About Me</h3>
             <p class="font-josefin text-p-text">
-                I'm a {age}-year-old developer from Italy. Ever since I was little I've always been passionate about computers and how they operate, now I'm learning everday new technologies or programming languages, like <Mark>Go</Mark> and <Mark>Rust</Mark> the two programmming languages I am currently focussing on.
+                I'm a {age}-year-old developer from Italy. Ever since I was little I've always been passionate about computers and how they operate, now I'm learning new technologies or programming languages, like <Mark>Go</Mark> and <Mark>Rust</Mark> the two programmming languages I am currently focussing on.
             </p>
         </section>
 
         <section class="mt-6">
             <h3 class="font-young-serif text-2xl text-p-text underline decoration-wavy decoration-p-underline">Interests</h3>
             <p class="font-josefin text-p-text">
-                For performance related problems I switched to linux {linux} years ago and even if now I have Windows on dual-boot (for playing videogames) I never came back to Windows as my main os. In this lil period of time i tried different linux distros like <Mark>Ubuntu 20</Mark> (my first ever distro), <Mark>Manjaro</Mark>, <Mark>Arch</Mark>, <Mark>Kali</Mark> and <Mark>Linux Mint</Mark> the one I'm using right now.
+                For performance related problems I switched to linux {linux} years ago and even if now I have Windows on dual-boot (for playing videogames) I never came back to Windows as my main os. In this lil period of time i tried different linux distros like <Mark>Ubuntu 20</Mark>, <Mark>Manjaro</Mark>, <Mark>Arch</Mark>, <Mark>Kali</Mark> and <Mark>Linux Mint</Mark> the one I'm using right now.
                 <br />
                  In my spare time when I want to relax I play videogames like <Mark>Valorant</Mark> or <Mark>Sea of Thieves</Mark>
             </p>
@@ -42,13 +42,13 @@ const commit: { html_url: string; sha: string } = await fetch('https://api.githu
 
         <section class="mt-6">
             <h3 class="font-young-serif text-2xl text-p-text underline decoration-wavy decoration-p-underline">Skills</h3>
-            <p class="font-josefin text-p-text">I've lots of experience with <Mark>JavaScript</Mark> and <Mark>TypeScript</Mark> also I practiced <Mark>Python</Mark> for over a year, I'm recently moving my attention to <Mark>Go</Mark> and <Mark>Rust</Mark>.</p>
+            <p class="font-josefin text-p-text">I've lots of experience with <Mark>JavaScript</Mark> and <Mark>TypeScript</Mark> also I practiced <Mark>Python</Mark> for over a year, I'm recently moving my focus to <Mark>Go</Mark> and <Mark>Rust</Mark>.Go check out my top projects on <a class="underline text-pink-200 font-space" href="/projects"><i class="fa-solid fa-location-arrow mr-1"></i>github</a></p>
         </section>
     </main>
 
     <hr class="my-6 border-gray-600 mx-6" />
     <footer class="mx-6 font-josefin font-bold mb-10 text-gray-500">
-        <p class="text-md">📃 Code under <a href="https://github.com/NotGabry/gabryy.me/blob/main/LICENSE" class='decoration-dashed"'>MIT</a> license.</p>
-        <p class="text-md">🍁 GitHub Commit <a class="decoration-dashed hover:underline" href={commit.html_url}>{String(commit.sha).substring(0, 5)}.</a></p>
+        <p class="text-md">📃 Code under <a href="https://github.com/NotGabry/gabryy.me/blob/main/LICENSE" class="decoration-dashed hover:underline">MIT</a> license.</p>
+        <p class="text-md">🍁 GitHub Commit <a class="decoration-dashed hover:underline" href={commit.html_url}>{String(commit.sha || '00000').substring(0, 5)}.</a></p>
     </footer>
 </Layout>
