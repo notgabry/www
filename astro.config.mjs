@@ -10,7 +10,7 @@ export default defineConfig({
             enabled: true
         }
     }),
-    output: 'hybrid',
+    output: 'server',
     integrations: [tailwind(), svelte()],
     publicDir: './static'
 })
