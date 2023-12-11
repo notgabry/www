@@ -1,27 +1,18 @@
 export const prerender = false
-import type { Presence, PresenceAPI } from '@modules/Presence'
+import type { RecentSong, Lastfm } from '@modules/Presence'
 import type { APIRoute } from 'astro'
-import Image from '@modules/Presence'
 
 export const GET: APIRoute = async () => {
-    const a = await fetch('https://api.lanyard.rest/v1/users/683423964227436576') // TODO: no dependencies from lanyard
-    const b: Presence = await a.json()
+    const a: Lastfm = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=notgabry&api_key=${import.meta.env.Lastfm}&format=json&limit=1`)
+        .then((a) => a.json())
+        .catch(() => {})
 
-    const data: PresenceAPI = {
-        activity: {
-            application_id: b.data.activities[0]?.application_id || '0',
-            name: b.data.activities[0]?.name,
-            state: b.data.activities[0]?.state || null,
-            details: b.data.activities[0]?.details || null,
-            assets: {
-                large_image: b.data.spotify?.album_art_url ?? Image(b)
-            },
-            timestamps: {
-                start: b.data.activities[0]?.timestamps.start || 0
-            },
-            status: b.data.discord_status
-        },
-        username: b.data.discord_user.username
+    const last: RecentSong = {
+        image: a.recenttracks?.track[0].image[3]['#text'],
+        name: a.recenttracks?.track[0].name,
+        url: a.recenttracks?.track[0].url,
+        artist: a.recenttracks?.track[0].artist['#text']
     }
-    return new Response(JSON.stringify(data))
+    return new Response(JSON.stringify(last))
 }
+4
