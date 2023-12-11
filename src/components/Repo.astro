@@ -7,7 +7,7 @@ const { url, name, language, description, stars } = Astro.props
     <div class="flex w-full justify-between">
         <div class="flex-col max-w-[20rem] truncate text-p-text">
             <a class="text-xl font-bold group-hover:underline font-space" href={url}>{name}</a>
-            <p class="text-p-text-secondary truncate">{description || 'No Description'}</p>
+            <p class="text-p-text-secondary truncate">{description || 'No Description.'}</p>
         </div>
 
         <div class="flex-col text-right">
