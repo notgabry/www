@@ -8,7 +8,6 @@
 
     onMount(async () => {
         data = await fetch('/api/presence.json').then((c) => c.json())
-        console.log(data)
     })
 </script>
 
