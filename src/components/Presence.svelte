@@ -23,7 +23,7 @@
             <img on:load={() => (isLoading = false)} src={data?.image} class="max-w-full h-full rounded-md aspect-square flex-grow-0" draggable="false" alt="Discord Presence" />
         </div>
         <div class="flex-col mx-4 w-fit h-full truncate">
-            <a class="text-lg font-bold group-hover:underline" href={data?.url}>{data?.name}</a>
+            <a class="text-xl font-bold group-hover:underline" href={data?.url}>{data?.name}</a>
             <p class="text-md">{data?.artist}</p>
         </div>
     </div>

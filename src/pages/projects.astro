@@ -12,7 +12,7 @@ let repos: { html_url: string; full_name: string; stargazers_count: number; lang
     .catch(() => [])
 
 if (repos.length) {
-    repos = repos.filter((a) => a.stargazers_count)
+    repos = repos.filter((a) => a.stargazers_count && !a.fork)
     repos.sort((a, b) => {
         const comparison = b.stargazers_count - a.stargazers_count
 
@@ -34,7 +34,7 @@ if (repos.length) {
         {
             repos.length ? (
                 repos.map((e, i) => {
-                    if (!e.fork) return <Repo name={e.full_name} language={e.language} description={e.description} stars={e.stargazers_count} url={e.html_url} />
+                    return <Repo name={e.full_name} language={e.language} description={e.description} stars={e.stargazers_count} url={e.html_url} />
                 })
             ) : (
                 <section class="bg-red-500 border border-red-800 text-p-text text-center rounded-md max-w-md py-2 mx-auto font-space">
