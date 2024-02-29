@@ -1,0 +1,11 @@
+---
+const commit: { html_url: string; sha: string } = await fetch('https://api.github.com/repos/notgabry/gabryy.me/commits/main')
+    .then((a) => a.json())
+    .catch(() => {})
+---
+
+<hr class="my-6 border-gray-600 mx-6" />
+<footer class="mx-6 font-josefin font-bold mb-10 text-gray-500">
+    <p class="text-md">📃 Code under <a href="https://github.com/notgabry/gabryy.me/blob/main/LICENSE" class="decoration-dashed hover:underline">MIT</a> license.</p>
+    <p class="text-md">🍁 GitHub Commit <a class="decoration-dashed hover:underline" href={commit.html_url}>{String(commit.sha || '00000').substring(0, 5)}.</a></p>
+</footer>

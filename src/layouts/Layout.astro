@@ -1,5 +1,6 @@
 ---
 const { title } = Astro.props
+import Footer from '@components/Footer.astro'
 import '../styles/input.css'
 ---
 
@@ -25,5 +26,6 @@ import '../styles/input.css'
 
     <body class="bg-p-bg max-w-xl mx-auto">
         <slot />
+        <Footer />
     </body>
 </html>
