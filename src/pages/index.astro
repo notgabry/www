@@ -9,28 +9,25 @@ const age = GenerateDynDate(new Date(2007, 9, 12))
 ---
 
 <Layout title="notgabry">
-    <main class="mt-10 mx-6">
-        <header class="text-center mb-9 font-young-serif">
-            <Head description="🖐hello world!" />
-            <div class="text-p-text pt-6 text-center space-x-6">
-                <a href="https://inertiah.uno/github" target="_blank" class="px-2 cursor-pointer inline-block my-2"><i class="fa-brands fa-github"></i></a>
-                <a href="https://inertiah.uno/x" target="_blank" class="px-2 cursor-pointer inline-block my-2"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://inertiah.uno/discord" target="_blank" class="px-2 cursor-pointer inline-block my-2"><i class="fa-brands fa-discord"></i></a>
-                <a href="mailto:inbox@gabryy.me" target="_blank" class="px-2 cursor-pointer inline-block my-2"><i class="fa-solid fa-envelope"></i></a>
-            </div>
+    <main class="mt-10 max-w-2xl mx-auto space-y-6 flex-grow px-4">
+        <header class="text-center mb-9">
+            <Head description="Hello, world!" links />
         </header>
 
-        <section class="mt-6">
-            <h3 class="font-young-serif text-2xl text-p-text underline decoration-wavy decoration-p-underline">About Me</h3>
-            <p class="font-josefin text-p-text">
-                I'm a {age}-year-old developer from Italy. Ever since I was little I've always been passionate about computers and how they operate, now I'm learning new technologies or programming languages, like <Mark>Go</Mark> and <Mark>Rust</Mark> the two programmming languages I love the most.
+        <section class="bg-p-card-2 border-2 border-black shadow-neobrutalist p-4">
+            <h3 class="text-3xl font-bold">About Me</h3>
+            <p>
+                I'm a {age}-year-old developer from Italy. Ever since I was little I've always been passionate about computers and how they operate, now I'm learning new technologies or programming
+                languages, like <Mark>Go</Mark> and <Mark>Rust</Mark> the two programmming languages I love the most.
             </p>
         </section>
 
-        <section class="mt-6">
-            <h3 class="font-young-serif text-2xl text-p-text underline decoration-wavy decoration-p-underline">Interests</h3>
-            <p class="font-josefin text-p-text">
-                I've half a decade of experience with linux, I've tried different linux distros like <Mark>Ubuntu 20</Mark>, <Mark>Manjaro</Mark>, <Mark>Arch</Mark>, <Mark>Kali</Mark> and <Mark>Linux Mint</Mark> the one I'm using right now.
+        <section class="bg-p-card-3 border-2 border-black shadow-neobrutalist p-4">
+            <h3 class="text-3xl font-bold">Interests</h3>
+            <p>
+                I've half a decade of experience with linux, I've tried different linux distros like <Mark>Ubuntu 20</Mark>, <Mark>Manjaro</Mark>, <Mark>Arch</Mark>, <Mark>Kali</Mark> and <Mark
+                    >Linux Mint</Mark
+                > the one I'm using right now.
                 <br />
                 In my spare time when I want to relax I play videogames like <Mark>Valorant</Mark>
                 <br />
@@ -39,11 +36,11 @@ const age = GenerateDynDate(new Date(2007, 9, 12))
             <Presence client:load />
         </section>
 
-        <section class="mt-6">
-            <h3 class="font-young-serif text-2xl text-p-text underline decoration-wavy decoration-p-underline">Skills</h3>
-            <p class="font-josefin text-p-text">
-                I've lots of experience with <Mark>JavaScript</Mark> and <Mark>TypeScript</Mark> also I practiced <Mark>Python</Mark> for over a year, I'm recently moving my focus to <Mark>Go</Mark> and <Mark>Rust</Mark>. <br />
-                Go check out my top projects on <a class="underline text-pink-200 font-space" href="/projects"><i class="fa-solid fa-location-arrow mr-1"></i>/projects</a>
+        <section class="bg-p-card-5 border-2 border-black shadow-neobrutalist p-4">
+            <h3 class="text-3xl font-bold">Skills</h3>
+            <p>
+                I've lots of experience with <Mark>JavaScript</Mark> and <Mark>TypeScript</Mark> also I practiced <Mark>Python</Mark> for over a year, I'm recently moving my focus to <Mark>Go</Mark> and
+                <Mark>Rust</Mark>. <br />
             </p>
         </section>
     </main>

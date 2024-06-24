@@ -5,22 +5,27 @@ module.exports = {
         extend: {
             colors: {
                 p: {
-                    text: '#fdebf3',
-                    'text-secondary': '#f9e7f0',
-                    bg: '#1e1e2e',
-                    'bg-secondary': '#363654',
-                    secondary: '#584966',
-                    underline: '#375a7f',
+                    bg: '#f472b6',
+                    secondary: '#b7d4da',
                     selection: '#ffffff4d',
-                    star: '#e3b341'
+                    star: '#e3b341',
+                    accent: '#4ade80',
+                    'card-1': '#e879f9',
+                    'card-2': '#a3e635',
+                    'card-3': '#e879f9',
+                    'card-4': '#22d3ee',
+                    'card-5': '#c084fc'
                 }
+            },
+            boxShadow: {
+                neobrutalist: '8px 8px 0px rgba(0,0,0,1)',
+                'neobrutalist-low': '4px 4px 0px rgba(0,0,0,1)'
             }
         },
         fontFamily: {
-            'young-serif': ['Young Serif', 'serif'],
-            josefin: ['Josefin Sans', 'sans-serif'],
+            grotesque: ['Bricolage Grotesque', 'sans-serif'],
             space: ['Space Mono', 'monospace']
         }
     },
-    plugins: [require('tailwind-scrollbar')]
+    plugins: []
 }

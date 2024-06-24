@@ -2,22 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
     ::-webkit-scrollbar {
         width: 5px;
+        background-color: theme('colors.white');
     }
-    
+
     ::-webkit-scrollbar-thumb {
-        background-color: theme('colors.p.secondary');
-        border-radius: 5px;
+        background-color: theme('colors.black');
     }
-    
+
     ::-moz-selection {
-        background-color: theme('colors.p.selection');
+        background-color: theme('colors.white');
     }
-    
+
     ::selection {
-        background-color: theme('colors.p.selection');
+        background-color: theme('colors.white');
     }
 }

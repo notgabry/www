@@ -1,9 +1,26 @@
 ---
-const { description } = Astro.props
+const { description, links } = Astro.props
 ---
 
-<div class="mx-auto inline-block">
-    <a href="/"><img src="/gabry.png" alt="cat avatar" class="max-w-[9rem] rounded-full border-white border-spacing-6 border p-1 transition hover:animate-spin cursor-wait" draggable="false" /></a>
+<div class="bg-p-card-1 text-black border-2 border-black p-4 shadow-neobrutalist">
+    <h1 class="text-4xl font-bold text-center">notgabry</h1>
+    <p class="text-lg rounded inline-block px-2 italic">{description}</p>
+    {
+        links && (
+            <div class="pt-2 text-center space-x-6">
+                <a href="https://inertiah.uno/github" target="_blank" class="px-2 cursor-pointer inline-block my-2">
+                    <i class="fa-brands fa-github" />
+                </a>
+                <a href="https://inertiah.uno/x" target="_blank" class="px-2 cursor-pointer inline-block my-2">
+                    <i class="fa-brands fa-x-twitter" />
+                </a>
+                <a href="https://inertiah.uno/discord" target="_blank" class="px-2 cursor-pointer inline-block my-2">
+                    <i class="fa-brands fa-discord" />
+                </a>
+                <a href="mailto:inbox@gabryy.me" target="_blank" class="px-2 cursor-pointer inline-block my-2">
+                    <i class="fa-solid fa-envelope" />
+                </a>
+            </div>
+        )
+    }
 </div>
-<h1 class="text-4xl text-p-text text-center">notgabry</h1>
-<p class="text-lg bg-p-secondary rounded inline-block px-2 text-p-text-secondary mt-1">{description}</p>
