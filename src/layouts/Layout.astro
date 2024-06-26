@@ -1,6 +1,5 @@
 ---
 const { title } = Astro.props
-import Footer from '@components/Footer.astro'
 import Navbar from '@components/Navbar.astro'
 import '../styles/input.css'
 ---
@@ -21,13 +20,15 @@ import '../styles/input.css'
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" />
     </head>
 
-    <body class="bg-p-bg font-grotesque flex flex-col min-h-screen">
+    <body class="bg-p-bg font-grotesque mb-10">
         <Navbar />
         <slot />
-        <Footer />
     </body>
 </html>

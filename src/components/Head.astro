@@ -2,9 +2,10 @@
 const { description, links } = Astro.props
 ---
 
-<div class="bg-p-card-1 text-black border-2 border-black p-4 shadow-neobrutalist">
+<div class="bg-p-card-1 text-black border-2 border-black p-4 shadow-neobrutalist flex flex-col">
     <h1 class="text-4xl font-bold text-center">notgabry</h1>
     <p class="text-lg rounded inline-block px-2 italic">{description}</p>
+
     {
         links && (
             <div class="pt-2 text-center space-x-6">

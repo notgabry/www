@@ -1,0 +1,77 @@
+---
+import Layout from '@layouts/Layout.astro'
+import Card from '@components/Card.astro'
+
+const config = new URL(Astro.url)
+
+// a friend of mine wanted to get his stats
+let user = 'notgabry'
+let period = '7day'
+if (config.searchParams.get('centodiping') == 'true') user = 'centodiping'
+if (config.searchParams.get('period') == 'overall') period = 'overall'
+
+const a = await fetch(
+    `http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=${user}&api_key=${import.meta.env.Lastfm}&format=json&limit=6&period=${period}`
+)
+const artists: {
+    topartists: {
+        artist: {
+            name: string
+            playcount: number
+            url: string
+            image: {
+                size: 'large' | 'medium' | 'small'
+                '#text': string
+            }[]
+        }[]
+    }
+} = await a.json()
+
+const b = await fetch(
+    `http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${user}&api_key=${import.meta.env.Lastfm}&format=json&limit=6&period=${period}`
+)
+const songs: {
+    toptracks: {
+        track: {
+            name: string
+            playcount: number
+            url: string
+            artist: {
+                name: string
+            }
+            image: {
+                size: 'large' | 'medium' | 'small'
+                '#text': string
+            }[]
+        }[]
+    }
+} = await b.json()
+---
+
+<Layout title="notgabry">
+    <main class="mt-10 max-w-5xl mx-auto space-y-6 px-4">
+        <section class="w-full bg-p-card-2 p-4 border-2 border-black shadow-neobrutalist h-auto">
+            <h1 class="text-2xl font-bold">Top Artists {period == '7day' && '(last 7 days)'}</h1>
+
+            <div class="grid gap-x-4 gap-y-4 md:grid-cols-2 pt-5">
+                {
+                    artists.topartists.artist.map((e) => {
+                        return <Card title={e.name} url={e.url} plays={e.playcount} image={e.image[3]['#text']} />
+                    })
+                }
+            </div>
+        </section>
+
+        <section class="block w-full bg-p-card-1 p-4 border-2 border-black shadow-neobrutalist h-auto">
+            <h1 class="text-2xl font-bold">Top Songs {period == '7day' && '(last 7 days)'}</h1>
+
+            <div class="grid gap-x-4 gap-y-4 md:grid-cols-2 pt-5">
+                {
+                    songs.toptracks.track.map((e) => {
+                        return <Card title={e.name} sub={e.artist.name} url={e.url} plays={e.playcount} image={e.image[3]['#text']} />
+                    })
+                }
+            </div>
+        </section>
+    </main>
+</Layout>

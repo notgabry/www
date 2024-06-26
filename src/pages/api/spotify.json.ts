@@ -1,5 +1,5 @@
 export const prerender = false
-import type { RecentSong, Lastfm } from '@modules/Presence'
+import type { RecentSong, Lastfm } from '@modules/Spotify'
 import type { APIRoute } from 'astro'
 
 export const GET: APIRoute = async () => {
@@ -15,4 +15,3 @@ export const GET: APIRoute = async () => {
     }
     return new Response(JSON.stringify(last))
 }
-4
