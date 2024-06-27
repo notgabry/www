@@ -1,0 +1,11 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const { icon, name, url } = Astro.props
+---
+
+<div
+    class="group bg-p-accent ring-1 ring-p-accent-2 rounded-md flex items-center space-x-4 px-4 py-2 hover:bg-p-accent-2 transition-all hover:ease-in-out duration-500">
+    <Icon name={icon} is:inline={true} />
+    <a class="text-md truncate group-hover:underline" href={url}>{name}</a>
+</div>

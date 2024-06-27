@@ -1,19 +1,17 @@
 ---
 import Layout from '@layouts/Layout.astro'
 import Card from '@components/Card.astro'
+import LastFmAPI from '@modules/Lastfm'
+import type { Lastfm } from '@modules/Spotify'
 
 const config = new URL(Astro.url)
 
 // a friend of mine wanted to get his stats
 let user = 'notgabry'
-let period = '7day'
-if (config.searchParams.get('centodiping') == 'true') user = 'centodiping'
-if (config.searchParams.get('period') == 'overall') period = 'overall'
 
-const a = await fetch(
-    `http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=${user}&api_key=${import.meta.env.Lastfm}&format=json&limit=6&period=${period}`
-)
-const artists: {
+if (config.searchParams.get('centodiping') == 'true') user = 'centodiping'
+
+type artists = {
     topartists: {
         artist: {
             name: string
@@ -25,12 +23,8 @@ const artists: {
             }[]
         }[]
     }
-} = await a.json()
-
-const b = await fetch(
-    `http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${user}&api_key=${import.meta.env.Lastfm}&format=json&limit=6&period=${period}`
-)
-const songs: {
+}
+type tracks = {
     toptracks: {
         track: {
             name: string
@@ -45,15 +39,31 @@ const songs: {
             }[]
         }[]
     }
-} = await b.json()
+}
+
+const artists = await LastFmAPI<artists>({ user, isOverall: true, method: 'user.gettopartists', limit: 6 })
+const songs = await LastFmAPI<tracks>({ user, isOverall: true, method: 'user.gettoptracks', limit: 6 })
+const recent = await LastFmAPI<Lastfm>({ user, isOverall: true, method: 'user.getrecenttracks', limit: 8 })
 ---
 
 <Layout title="notgabry">
-    <main class="mt-10 max-w-5xl mx-auto space-y-6 px-4">
-        <section class="w-full bg-p-card-2 p-4 border-2 border-black shadow-neobrutalist h-auto">
-            <h1 class="text-2xl font-bold">Top Artists {period == '7day' && '(last 7 days)'}</h1>
+    <main class="mt-10 max-w-5xl mx-auto space-y-12 px-4">
+        <section class="w-full h-auto">
+            <h1 class="text-2xl font-bold">Recent Songs</h1>
 
-            <div class="grid gap-x-4 gap-y-4 md:grid-cols-2 pt-5">
+            <div class="grid gap-x-4 gap-y-4 md:grid-cols-2 pt-3">
+                {
+                    recent.recenttracks.track.slice(0, 8).map((e) => {
+                        return <Card title={e.name} sub={e.artist['#text']} url={e.url} image={e.image[3]['#text']} />
+                    })
+                }
+            </div>
+        </section>
+
+        <section class="w-full h-auto">
+            <h1 class="text-2xl font-bold">Top Artists</h1>
+
+            <div class="grid gap-x-4 gap-y-4 md:grid-cols-2 pt-3">
                 {
                     artists.topartists.artist.map((e) => {
                         return <Card title={e.name} url={e.url} plays={e.playcount} image={e.image[3]['#text']} />
@@ -62,10 +72,10 @@ const songs: {
             </div>
         </section>
 
-        <section class="block w-full bg-p-card-1 p-4 border-2 border-black shadow-neobrutalist h-auto">
-            <h1 class="text-2xl font-bold">Top Songs {period == '7day' && '(last 7 days)'}</h1>
+        <section class="w-full h-auto">
+            <h1 class="text-2xl font-bold">Top Songs</h1>
 
-            <div class="grid gap-x-4 gap-y-4 md:grid-cols-2 pt-5">
+            <div class="grid gap-x-4 gap-y-4 md:grid-cols-2 pt-3">
                 {
                     songs.toptracks.track.map((e) => {
                         return <Card title={e.name} sub={e.artist.name} url={e.url} plays={e.playcount} image={e.image[3]['#text']} />

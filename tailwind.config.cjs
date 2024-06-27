@@ -5,16 +5,13 @@ module.exports = {
         extend: {
             colors: {
                 p: {
-                    bg: '#f472b6',
-                    secondary: '#b7d4da',
-                    selection: '#ffffff4d',
+                    bg: '#171717',
+                    text: '#e8e8e8',
+                    secondary: '#8b8b8b',
                     star: '#e3b341',
-                    accent: '#4ade80',
-                    'card-1': '#e879f9',
-                    'card-2': '#a3e635',
-                    'card-3': '#e879f9',
-                    'card-4': '#22d3ee',
-                    'card-5': '#c084fc'
+                    accent: '#1d1d1d',
+                    'accent-2': '#262626',
+                    'accent-3': '#204eeb'
                 }
             },
             boxShadow: {

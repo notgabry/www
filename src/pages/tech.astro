@@ -1,0 +1,166 @@
+---
+import Layout from '@layouts/Layout.astro'
+import Box from '@components/Box.astro'
+
+const page = [
+    {
+        name: 'Tools',
+        boxes: [
+            {
+                name: 'VS Code',
+                icon: 'devicon:vscode'
+            },
+            {
+                name: 'IntelliJ IDEA',
+                icon: 'devicon:intellij'
+            },
+            {
+                name: 'Filezilla',
+                icon: 'devicon:filezilla'
+            }
+        ]
+    },
+    {
+        name: 'Development',
+        boxes: [
+            {
+                name: 'HTML',
+                icon: 'devicon:html5'
+            },
+            {
+                name: 'CSS',
+                icon: 'devicon:css3'
+            },
+            {
+                name: 'TypeScript',
+                icon: 'devicon:typescript'
+            },
+            {
+                name: 'JavaScript',
+                icon: 'devicon:javascript'
+            },
+            {
+                name: 'Go',
+                icon: 'devicon:go'
+            },
+            {
+                name: 'Rust',
+                icon: 'devicon:rust'
+            },
+            {
+                name: 'C++',
+                icon: 'vscode-icons:file-type-cpp3'
+            },
+            {
+                name: 'Python',
+                icon: 'devicon:python'
+            },
+            {
+                name: 'Svelte',
+                icon: 'devicon:svelte'
+            },
+            {
+                name: 'Astro',
+                icon: 'devicon:astro'
+            },
+            {
+                name: 'Tailwind',
+                icon: 'devicon:tailwindcss'
+            },
+            {
+                name: 'NodeJS',
+                icon: 'devicon:nodejs'
+            },
+            {
+                name: 'Electron',
+                icon: 'devicon:electron'
+            }
+        ]
+    },
+    {
+        name: 'Services',
+        boxes: [
+            {
+                name: 'Workers',
+                icon: 'devicon:cloudflareworkers'
+            },
+            {
+                name: 'GitHub',
+                icon: 'mdi:github'
+            },
+            {
+                name: 'GitLab',
+                icon: 'devicon:gitlab'
+            },
+            {
+                name: 'Vercel',
+                icon: 'vscode-icons:file-type-vercel'
+            },
+            {
+                name: 'Netlify',
+                icon: 'cib:netlify'
+            },
+            {
+                name: 'Supabase',
+                icon: 'devicon:supabase'
+            },
+            {
+                name: 'Pocketbase',
+                icon: 'simple-icons:pocketbase'
+            },
+            {
+                name: 'Firebase',
+                icon: 'devicon:firebase'
+            }
+        ]
+    },
+    {
+        name: 'OS',
+        boxes: [
+            {
+                name: 'Ubuntu',
+                icon: 'mdi:ubuntu'
+            },
+            {
+                name: 'Manjaro',
+                icon: 'mdi:manjaro'
+            },
+            {
+                name: 'Kali',
+                icon: 'devicon:kalilinux'
+            },
+            {
+                name: 'Arch',
+                icon: 'mdi:arch'
+            },
+            {
+                name: 'Mint',
+                icon: 'mdi:linux-mint'
+            },
+            {
+                name: 'Windows',
+                icon: 'devicon:windows11'
+            }
+        ]
+    }
+]
+---
+
+<Layout title="notgabry">
+    <main class="mt-10 max-w-2xl mx-auto space-y-6 px-4">
+        <div class="flex flex-col space-y-4">
+            {
+                page.map((e) => (
+                    <section>
+                        <h4 class="text-xl font-bold">{e.name}</h4>
+                        <div class="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-2">
+                            {e.boxes?.map((a) => (
+                                <Box name={a.name} icon={a.icon} />
+                            ))}
+                        </div>
+                    </section>
+                ))
+            }
+        </div>
+    </main>
+</Layout>
