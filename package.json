@@ -24,10 +24,14 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@iconify-json/ci": "^1.1.13",
     "@iconify-json/cib": "^1.1.8",
     "@iconify-json/devicon": "^1.1.44",
+    "@iconify-json/ic": "^1.1.17",
     "@iconify-json/mdi": "^1.1.67",
     "@iconify-json/simple-icons": "^1.1.107",
-    "@iconify-json/vscode-icons": "^1.1.35"
+    "@iconify-json/vscode-icons": "^1.1.35",
+    "@iconify/svelte": "^4.0.2",
+    "iconify-icon": "^2.1.0"
   }
 }

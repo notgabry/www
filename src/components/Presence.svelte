@@ -28,7 +28,7 @@
                 alt="Spotify Song" />
         </div>
         <div class="mx-4 w-fit h-full truncate">
-            <a class="text-xl font-bold group-hover:underline" href={data?.url}>{data?.name}</a>
+            <a class="text-lg font-bold group-hover:underline" href={data?.url}>{data?.name}</a>
             <p class="text-md text-p-secondary">{data?.artist}</p>
         </div>
     </div>

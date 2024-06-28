@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro'
 import Box from '@components/Box.astro'
+import Head from '@components/Head.astro'
 
 const page = [
     {
@@ -8,15 +9,18 @@ const page = [
         boxes: [
             {
                 name: 'VS Code',
-                icon: 'devicon:vscode'
+                icon: 'devicon:vscode',
+                url: 'https://code.visualstudio.com/'
             },
             {
                 name: 'IntelliJ IDEA',
-                icon: 'devicon:intellij'
+                icon: 'devicon:intellij',
+                url: 'https://www.jetbrains.com/idea/'
             },
             {
                 name: 'Filezilla',
-                icon: 'devicon:filezilla'
+                icon: 'devicon:filezilla',
+                url: 'https://filezilla-project.org/'
             }
         ]
     },
@@ -25,55 +29,68 @@ const page = [
         boxes: [
             {
                 name: 'HTML',
-                icon: 'devicon:html5'
+                icon: 'devicon:html5',
+                url: 'https://it.wikipedia.org/wiki/HTML'
             },
             {
                 name: 'CSS',
-                icon: 'devicon:css3'
+                icon: 'devicon:css3',
+                url: 'https://it.wikipedia.org/wiki/CSS'
             },
             {
                 name: 'TypeScript',
-                icon: 'devicon:typescript'
+                icon: 'devicon:typescript',
+                url: 'https://www.typescriptlang.org/'
             },
             {
                 name: 'JavaScript',
-                icon: 'devicon:javascript'
+                icon: 'devicon:javascript',
+                url: 'https://it.wikipedia.org/wiki/JavaScript'
             },
             {
                 name: 'Go',
-                icon: 'devicon:go'
+                icon: 'devicon:go',
+                url: 'https://go.dev/'
             },
             {
                 name: 'Rust',
-                icon: 'devicon:rust'
+                icon: 'devicon:rust',
+                url: 'https://www.rust-lang.org/tools/install'
             },
             {
                 name: 'C++',
-                icon: 'vscode-icons:file-type-cpp3'
+                icon: 'vscode-icons:file-type-cpp3',
+                url: 'https://cplusplus.com/'
             },
             {
                 name: 'Python',
-                icon: 'devicon:python'
+                icon: 'devicon:python',
+                url: 'https://www.python.org/downloads/'
             },
             {
-                name: 'Svelte',
-                icon: 'devicon:svelte'
+                name: 'SvelteKit',
+                icon: 'devicon:svelte',
+                url: 'https://svelte.dev/'
             },
             {
                 name: 'Astro',
-                icon: 'devicon:astro'
+                icon: 'devicon:astro',
+                url: 'https://astro.build/'
             },
             {
                 name: 'Tailwind',
-                icon: 'devicon:tailwindcss'
+                icon: 'devicon:tailwindcss',
+                url: 'https://tailwindcss.com/'
             },
             {
                 name: 'NodeJS',
-                icon: 'devicon:nodejs'
+                icon: 'devicon:nodejs',
+                url: 'https://nodejs.org/en'
             },
             {
                 name: 'Electron',
-                icon: 'devicon:electron'
+                icon: 'devicon:electron',
+                url: 'https://www.electronjs.org/'
             }
         ]
     },
@@ -82,35 +99,43 @@ const page = [
         boxes: [
             {
                 name: 'Workers',
-                icon: 'devicon:cloudflareworkers'
+                icon: 'devicon:cloudflareworkers',
+                url: 'https://workers.cloudflare.com/'
             },
             {
                 name: 'GitHub',
-                icon: 'mdi:github'
+                icon: 'mdi:github',
+                url: 'https://github.com'
             },
             {
                 name: 'GitLab',
-                icon: 'devicon:gitlab'
+                icon: 'devicon:gitlab',
+                url: 'https://gitlab.com'
             },
             {
                 name: 'Vercel',
-                icon: 'vscode-icons:file-type-vercel'
+                icon: 'vscode-icons:file-type-vercel',
+                url: 'https://vercel.com/'
             },
             {
                 name: 'Netlify',
-                icon: 'cib:netlify'
+                icon: 'cib:netlify',
+                url: 'https://www.netlify.com/'
             },
             {
                 name: 'Supabase',
-                icon: 'devicon:supabase'
+                icon: 'devicon:supabase',
+                url: 'https://supabase.com/'
             },
             {
                 name: 'Pocketbase',
-                icon: 'simple-icons:pocketbase'
+                icon: 'simple-icons:pocketbase',
+                url: 'https://pocketbase.io/'
             },
             {
                 name: 'Firebase',
-                icon: 'devicon:firebase'
+                icon: 'devicon:firebase',
+                url: 'https://firebase.google.com/'
             }
         ]
     },
@@ -119,27 +144,33 @@ const page = [
         boxes: [
             {
                 name: 'Ubuntu',
-                icon: 'mdi:ubuntu'
+                icon: 'mdi:ubuntu',
+                url: 'https://ubuntu.com/'
             },
             {
                 name: 'Manjaro',
-                icon: 'mdi:manjaro'
+                icon: 'mdi:manjaro',
+                url: 'https://manjaro.org/'
             },
             {
                 name: 'Kali',
-                icon: 'devicon:kalilinux'
+                icon: 'devicon:kalilinux',
+                url: 'https://www.kali.org/'
             },
             {
                 name: 'Arch',
-                icon: 'mdi:arch'
+                icon: 'mdi:arch',
+                url: 'https://archlinux.org/'
             },
             {
                 name: 'Mint',
-                icon: 'mdi:linux-mint'
+                icon: 'mdi:linux-mint',
+                url: 'https://linuxmint.com/'
             },
             {
                 name: 'Windows',
-                icon: 'devicon:windows11'
+                icon: 'devicon:windows11',
+                url: 'https://www.microsoft.com/windows'
             }
         ]
     }
@@ -148,6 +179,8 @@ const page = [
 
 <Layout title="notgabry">
     <main class="mt-10 max-w-2xl mx-auto space-y-6 px-4">
+        <Head description="As you can see I don't really have a life" />
+
         <div class="flex flex-col space-y-4">
             {
                 page.map((e) => (
@@ -155,7 +188,7 @@ const page = [
                         <h4 class="text-xl font-bold">{e.name}</h4>
                         <div class="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-2">
                             {e.boxes?.map((a) => (
-                                <Box name={a.name} icon={a.icon} />
+                                <Box name={a.name} icon={a.icon} url={a.url} />
                             ))}
                         </div>
                     </section>

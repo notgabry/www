@@ -1,6 +1,7 @@
 ---
 const { title } = Astro.props
-import Navbar from '@components/Navbar.astro'
+import Navbar from '@components/Navbar.svelte'
+
 import '../styles/input.css'
 ---
 
@@ -15,7 +16,7 @@ import '../styles/input.css'
         <link rel="shortcut icon" href="/gabry-icon.png" />
 
         <meta property="og:title" content="NotGabry" />
-        <meta property="og:description" content="Neobrutalism ❤" />
+        <meta property="og:description" content="Modern Minimal ❤" />
         <meta property="theme-color" content="#A9A7F1" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,11 +25,11 @@ import '../styles/input.css'
             href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" />
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
     </head>
 
-    <body class="bg-p-bg font-grotesque mb-10 text-p-text">
-        <Navbar />
+    <body class="bg-p-bg font-grotesque mb-16 text-p-text">
+        <Navbar client:load />
         <slot />
     </body>
 </html>
