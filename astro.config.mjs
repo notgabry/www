@@ -7,12 +7,8 @@ import icon from 'astro-icon'
 
 // https://astro.build/config
 export default defineConfig({
-    adapter: vercel({
-        speedInsights: {
-            enabled: true
-        }
-    }),
-    output: 'server',
+    adapter: vercel(),
+    output: 'hybrid',
     integrations: [tailwind(), svelte(), icon()],
     publicDir: './static'
 })

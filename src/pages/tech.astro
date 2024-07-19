@@ -48,7 +48,7 @@ const page = [
                 url: 'https://it.wikipedia.org/wiki/JavaScript'
             },
             {
-                name: 'Go',
+                name: 'GoLang',
                 icon: 'devicon:go',
                 url: 'https://go.dev/'
             },
@@ -185,7 +185,7 @@ const page = [
             {
                 page.map((e) => (
                     <section>
-                        <h4 class="text-xl font-bold">{e.name}</h4>
+                        <h2 class="text-xl font-bold">{e.name}</h2>
                         <div class="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-2">
                             {e.boxes?.map((a) => (
                                 <Box name={a.name} icon={a.icon} url={a.url} />

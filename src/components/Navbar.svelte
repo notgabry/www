@@ -1,22 +1,18 @@
 <script lang="ts">
     let isOpen = false
-
-    const toggle = () => {
-        isOpen = !isOpen
-        console.log(isOpen)
-    }
 </script>
 
 <nav class="h-16 w-full flex justify-between px-8">
     <div class="self-center">
         <a href="/" class="space-x-2">
-            <img class="w-8 hover:animate-spin inline" src="/gabry-icon.png" alt="Gabry's Avatar" />
-            <span class="inline hover:underline">notgabry</span>
+            <img class="hover:animate-spin inline" width="32" height="32" src="/gabry-icon.png" alt="Gabry's Avatar" />
+            <span class="hover:underline inline">notgabry</span>
         </a>
     </div>
     <div class="self-center">
         <button
-            on:click={toggle}
+            on:click={() => (isOpen = !isOpen)}
+            aria-label="Context Menu"
             class="bg-p-accent ring-1 ring-p-accent-2 hover:bg-p-accent-2 transition-all hover:ease-in-out duration-300 text-2xl rounded-md p-1">
             <iconify-icon inline icon="ci:menu-alt-05" class="inline"></iconify-icon>
         </button>
