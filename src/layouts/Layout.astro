@@ -1,36 +1,37 @@
 ---
 const { title } = Astro.props
-import Navbar from '@components/Navbar.svelte'
+import Navbar from '@components/Navbar.astro'
 
 import '../styles/input.css'
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:animate="slide">
     <head>
         <meta charset="utf-8" />
         <title>{title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content={Astro.generator} />
-        <link rel="icon" href="/gabry-icon.png" />
-        <link rel="shortcut icon" href="/gabry-icon.png" />
+        <meta name="description" content="Modern & Minimal ❤" />
 
-        <meta property="og:title" content="NotGabry" />
+        <meta property="og:title" content="notgabry" />
+        <meta property="og:site_name" content="notgabry" />
         <meta property="og:description" content="Modern & Minimal ❤" />
-        <meta property="description" content="Modern & Minimal ❤" />
         <meta property="theme-color" content="#A9A7F1" />
 
+        <link rel="icon" href="/gabry-icon.png" />
+        <link rel="shortcut icon" href="/gabry-icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-            rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet" />
         <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
     </head>
 
     <body class="bg-p-bg font-grotesque mb-16 text-p-text">
-        <Navbar client:load />
+        <header>
+            <Navbar />
+        </header>
+
         <slot />
     </body>
 </html>

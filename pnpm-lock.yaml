@@ -26,6 +26,9 @@ importers:
       astro-icon:
         specifier: ^1.1.0
         version: 1.1.0
+      astro-navbar:
+        specifier: ^2.3.3
+        version: 2.3.3
       axios:
         specifier: ^1.7.2
         version: 1.7.2
@@ -63,9 +66,6 @@ importers:
       '@iconify-json/vscode-icons':
         specifier: ^1.1.35
         version: 1.1.35
-      '@iconify/svelte':
-        specifier: ^4.0.2
-        version: 4.0.2(svelte@4.2.18)
       iconify-icon:
         specifier: ^2.1.0
         version: 2.1.0
@@ -390,11 +390,6 @@ packages:
 
   '@iconify-json/vscode-icons@1.1.35':
     resolution: {integrity: sha512-mUootLfDN4M9u5CL+gjJIGoVo/IaTGRo3WnysNTqTf9T5vkoe+EscJkx9aLbLs6gjSPQ+449SyuyTbBaF+nXww==}
-
-  '@iconify/svelte@4.0.2':
-    resolution: {integrity: sha512-6BSrU85FzGfhQD3bTXpnkCCvBAglEt8T9QednVnXAYm4C+d3464y+pYMzhQNJm5mPId2cuiw+2wXlDflXllHDw==}
-    peerDependencies:
-      svelte: '>4.0.0'
 
   '@iconify/tools@3.0.7':
     resolution: {integrity: sha512-DxfhFLMnooS34dHelpGUnnYrxLZHs0czC1CgrBhAbuL8ddVzBb2VEQm8kh9qGh7A34qeXAB5iSHH3A72rAaFrg==}
@@ -811,6 +806,9 @@ packages:
 
   astro-icon@1.1.0:
     resolution: {integrity: sha512-Nksc09p7UuHeMcPNS9w1pKqRw3+wEmmh0A3FJW+FNXvqaeWI4RLvD1MCWErpY3Z5Cvad317rvLdik/Hg8GEk8Q==}
+
+  astro-navbar@2.3.3:
+    resolution: {integrity: sha512-WAiQUVh3fS+bUw1oDcWpddFj30z3VgmMDmSjpU78idCXiV5t4KtlBvKV0mE/+hpcGLK0ji1evvCbk2wQ7wphyQ==}
 
   astro@4.11.0:
     resolution: {integrity: sha512-3VWxz/08sChQIX68tuE7Y769DUdjsT3Zq2/y4SkrDRlwN9IZ/aebwcRWr5a2yMSdO2vpFxtEdobq0mKnMlLErg==}
@@ -2852,11 +2850,6 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify/svelte@4.0.2(svelte@4.2.18)':
-    dependencies:
-      '@iconify/types': 2.0.0
-      svelte: 4.2.18
-
   '@iconify/tools@3.0.7':
     dependencies:
       '@iconify/types': 2.0.0
@@ -3255,6 +3248,8 @@ snapshots:
       '@iconify/utils': 2.1.25
     transitivePeerDependencies:
       - supports-color
+
+  astro-navbar@2.3.3: {}
 
   astro@4.11.0(@types/node@20.14.8)(typescript@5.5.2):
     dependencies:

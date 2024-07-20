@@ -1,0 +1,40 @@
+---
+import { Astronav, CloseIcon, MenuIcon, MenuItems, OpenIcon } from 'astro-navbar'
+import { Icon } from 'astro-icon/components'
+---
+
+<Astronav closeOnClick>
+    <div class="flex justify-between h-16 px-4">
+        <a href="/" class="space-x-2 self-center">
+            <img class="hover:animate-spin inline" width="32" height="32" src="/gabry-icon.png" alt="Gabry's Avatar" />
+            <span class="hover:underline inline">notgabry</span>
+        </a>
+
+        <div
+            class="bg-p-accent ring-p-accent-2 flex p-1 ring-1 rounded-md text-2xl self-center hover:bg-p-accent-2 transition-all hover:ease-out duration-500">
+            <MenuIcon>
+                <OpenIcon>
+                    <Icon name="ci:menu-alt-05" />
+                </OpenIcon>
+
+                <CloseIcon>
+                    <Icon name="ci:menu-alt-05" />
+                </CloseIcon>
+            </MenuIcon>
+        </div>
+    </div>
+
+    <MenuItems class="bg-p-accent absolute right-8 ring-1 ring-p-accent-2 rounded-md py-2 px-2 hidden">
+        <ul>
+            <li>
+                <a href="/" class="hover:bg-p-bg py-1 px-2 rounded-md w-full inline-block transition-all hover:ease duration-300">Home</a>
+            </li>
+            <li>
+                <a href="/tech" class="hover:bg-p-bg py-1 px-2 rounded-md w-full inline-block transition-all hover:ease duration-300">Technologies</a>
+            </li>
+            <li>
+                <a href="/songs" class="hover:bg-p-bg py-1 px-2 rounded-md w-full inline-block transition-all hover:ease duration-300">Songs</a>
+            </li>
+        </ul>
+    </MenuItems>
+</Astronav>

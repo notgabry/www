@@ -30,8 +30,7 @@ module.exports = {
             }
         },
         fontFamily: {
-            grotesque: ['Bricolage Grotesque', 'sans-serif'],
-            space: ['Space Mono', 'monospace']
+            grotesque: ['Bricolage Grotesque', 'sans-serif']
         }
     },
     plugins: []
