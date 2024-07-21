@@ -4,15 +4,12 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                p: {
-                    bg: '#171717',
-                    text: '#e8e8e8',
-                    secondary: '#8b8b8b',
-                    star: '#e3b341',
-                    accent: '#1d1d1d',
-                    'accent-2': '#262626',
-                    'accent-3': '#204eeb'
+                neutral: {
+                    850: '#1d1d1d'
                 }
+            },
+            fontFamily: {
+                grotesque: ['Bricolage Grotesque Variable', 'sans-serif']
             }
         }
     },

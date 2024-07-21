@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@astrojs/sitemap':
+        specifier: ^3.1.6
+        version: 3.1.6
       '@astrojs/svelte':
         specifier: ^5.6.0
         version: 5.6.0(astro@4.11.0(@types/node@20.14.8)(typescript@5.5.2))(svelte@4.2.18)(typescript@5.5.2)(vite@5.3.1(@types/node@20.14.8))
@@ -17,6 +20,9 @@ importers:
       '@astrojs/vercel':
         specifier: ^7.7.1
         version: 7.7.1(astro@4.11.0(@types/node@20.14.8)(typescript@5.5.2))
+      '@fontsource-variable/bricolage-grotesque':
+        specifier: ^5.0.6
+        version: 5.0.6
       '@types/node':
         specifier: ^20.14.8
         version: 20.14.8
@@ -98,6 +104,9 @@ packages:
   '@astrojs/prism@3.1.0':
     resolution: {integrity: sha512-Z9IYjuXSArkAUx3N6xj6+Bnvx8OdUSHA8YoOgyepp3+zJmtVYJIl/I18GozdJVW1p5u/CNpl3Km7/gwTJK85cw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
+
+  '@astrojs/sitemap@3.1.6':
+    resolution: {integrity: sha512-1Qp2NvAzVImqA6y+LubKi1DVhve/hXXgFvB0szxiipzh7BvtuKe4oJJ9dXSqaubaTkt4nMa6dv6RCCAYeB6xaQ==}
 
   '@astrojs/svelte@5.6.0':
     resolution: {integrity: sha512-rdHBlqMQE6UOA1ySF1t3sdb6pf44yP8Dd0TqxGO0yR4HAgbtKtW8XToJ3mQ1PmuRmf5fisH9xzt3EEx7NAQuZg==}
@@ -369,6 +378,9 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource-variable/bricolage-grotesque@5.0.6':
+    resolution: {integrity: sha512-vA/FxigkyVJ5s1La0iseED268UPdDfvb9HcCn+pivWsrVcZoPtyNvu3/IGB+l6NvgZP4YuwCEtB7ViyKgc3isg==}
 
   '@iconify-json/ci@1.1.13':
     resolution: {integrity: sha512-UXKTbxmWMUy4Iz6OL2GXzy2PtzKzT5WkM7IJ9OEdq7fe210yJ535hdNaJ6TeKHsxZ0TrVgTvR2gvctAMVobBeg==}
@@ -697,8 +709,14 @@ packages:
   '@types/nlcst@1.0.4':
     resolution: {integrity: sha512-ABoYdNQ/kBSsLvZAekMhIPMQ3YUZvavStpKYs7BjLLuKVmIMA0LUgZ7b54zzuWJRbHF80v1cNf4r90Vd6eMQDg==}
 
+  '@types/node@17.0.45':
+    resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
+
   '@types/node@20.14.8':
     resolution: {integrity: sha512-DO+2/jZinXfROG7j7WKFn/3C6nFwxy2lLpgLjEXJz+0XKphZlTLJ14mo8Vfg8X5BWN6XjyESXq+LcYdT7tR3bA==}
+
+  '@types/sax@1.2.7':
+    resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
 
   '@types/tar@6.1.13':
     resolution: {integrity: sha512-IznnlmU5f4WcGTh2ltRu/Ijpmk8wiWXfF0VA4s+HPjHZgvFggk1YaIkbo5krX/zUCzWF8N/l4+W/LNxnvAJ8nw==}
@@ -2100,6 +2118,9 @@ packages:
   safe-buffer@5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
 
+  sax@1.4.1:
+    resolution: {integrity: sha512-+aWOz7yVScEGoKNd4PA10LZ8sk0A/z5+nXQG5giUO5rprX9jgYsTdov9qCchZiPIZezbZH+jRut8nPodFAX4Jg==}
+
   section-matter@1.0.0:
     resolution: {integrity: sha512-vfD3pmTzGpufjScBh50YHKzEu2lxBWhVEHsNGoEXmCmn2hKGfeNLYMzCJpe8cD7gqX7TJluOVpBkAequ6dgMmA==}
     engines: {node: '>=4'}
@@ -2150,6 +2171,11 @@ packages:
   sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
 
+  sitemap@7.1.2:
+    resolution: {integrity: sha512-ARCqzHJ0p4gWt+j7NlU5eDlIO9+Rkr/JhPFZKKQ1l5GCus7rJH4UdrlVAh0xC/gDS/Qir2UMxqYNHtsKr2rpCw==}
+    engines: {node: '>=12.0.0', npm: '>=5.6.0'}
+    hasBin: true
+
   source-map-js@1.2.0:
     resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
     engines: {node: '>=0.10.0'}
@@ -2163,6 +2189,9 @@ packages:
   stdin-discarder@0.2.2:
     resolution: {integrity: sha512-UhDfHmA92YAlNnCfhmq0VeNL5bDbiZGg7sZ2IvPsXubGkiNa9EC+tUTsjBRsYUAz87btI6/1wf4XoVvQ3uRnmQ==}
     engines: {node: '>=18'}
+
+  stream-replace-string@2.0.0:
+    resolution: {integrity: sha512-TlnjJ1C0QrmxRNrON00JvaFFlNh5TTG00APw23j74ET7gkQpTASi6/L2fuiav8pzK715HXtUeClpBTw2NPSn6w==}
 
   string-width@4.2.3:
     resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==}
@@ -2543,6 +2572,12 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
+  '@astrojs/sitemap@3.1.6':
+    dependencies:
+      sitemap: 7.1.2
+      stream-replace-string: 2.0.0
+      zod: 3.23.8
+
   '@astrojs/svelte@5.6.0(astro@4.11.0(@types/node@20.14.8)(typescript@5.5.2))(svelte@4.2.18)(typescript@5.5.2)(vite@5.3.1(@types/node@20.14.8))':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.18)(vite@5.3.1(@types/node@20.14.8))
@@ -2821,6 +2856,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
+
+  '@fontsource-variable/bricolage-grotesque@5.0.6': {}
 
   '@iconify-json/ci@1.1.13':
     dependencies:
@@ -3137,9 +3174,15 @@ snapshots:
     dependencies:
       '@types/unist': 2.0.10
 
+  '@types/node@17.0.45': {}
+
   '@types/node@20.14.8':
     dependencies:
       undici-types: 5.26.5
+
+  '@types/sax@1.2.7':
+    dependencies:
+      '@types/node': 20.14.8
 
   '@types/tar@6.1.13':
     dependencies:
@@ -4879,6 +4922,8 @@ snapshots:
 
   safe-buffer@5.2.1: {}
 
+  sax@1.4.1: {}
+
   section-matter@1.0.0:
     dependencies:
       extend-shallow: 2.0.1
@@ -4942,6 +4987,13 @@ snapshots:
 
   sisteransi@1.0.5: {}
 
+  sitemap@7.1.2:
+    dependencies:
+      '@types/node': 17.0.45
+      '@types/sax': 1.2.7
+      arg: 5.0.2
+      sax: 1.4.1
+
   source-map-js@1.2.0: {}
 
   space-separated-tokens@2.0.2: {}
@@ -4949,6 +5001,8 @@ snapshots:
   sprintf-js@1.0.3: {}
 
   stdin-discarder@0.2.2: {}
+
+  stream-replace-string@2.0.0: {}
 
   string-width@4.2.3:
     dependencies:

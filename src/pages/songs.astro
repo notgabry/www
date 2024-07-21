@@ -1,6 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro'
-import Card from '@components/Card.astro'
+import Card from '@components/Card.svelte'
 import LastFmAPI from '@modules/Lastfm'
 import Head from '@components/Head.astro'
 
@@ -57,7 +57,7 @@ const recent = await LastFmAPI<Lastfm>({ user, isOverall: true, method: 'user.ge
             <div class="grid gap-x-4 gap-y-4 md:grid-cols-2 pt-3">
                 {
                     recent.recenttracks.track.slice(0, 8).map((e) => {
-                        return <Card title={e.name} sub={e.artist['#text']} url={e.url} image={e.image[3]['#text']} />
+                        return <Card client:load title={e.name} sub={e.artist['#text']} url={e.url} image={e.image[3]['#text']} />
                     })
                 }
             </div>
@@ -69,7 +69,7 @@ const recent = await LastFmAPI<Lastfm>({ user, isOverall: true, method: 'user.ge
             <div class="grid gap-x-4 gap-y-4 md:grid-cols-2 pt-3">
                 {
                     artists.topartists.artist.map((e) => {
-                        return <Card title={e.name} url={e.url} plays={e.playcount} image={e.image[3]['#text']} />
+                        return <Card client:load title={e.name} url={e.url} plays={e.playcount} image={e.image[3]['#text']} />
                     })
                 }
             </div>
@@ -81,7 +81,7 @@ const recent = await LastFmAPI<Lastfm>({ user, isOverall: true, method: 'user.ge
             <div class="grid gap-x-4 gap-y-4 md:grid-cols-2 pt-3">
                 {
                     songs.toptracks.track.map((e) => {
-                        return <Card title={e.name} sub={e.artist.name} url={e.url} plays={e.playcount} image={e.image[3]['#text']} />
+                        return <Card client:load title={e.name} sub={e.artist.name} url={e.url} plays={e.playcount} image={e.image[3]['#text']} />
                     })
                 }
             </div>

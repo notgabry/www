@@ -4,11 +4,10 @@
 
 @layer base {
     ::-webkit-scrollbar {
-        width: 5px;
+        @apply w-1;
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: theme('colors.p.secondary');
-        border-radius: 8px;
+        @apply bg-zinc-400 rounded-lg;
     }
 }

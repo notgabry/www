@@ -220,7 +220,8 @@ const page = [
             {
                 page.map((e) => (
                     <section>
-                        <h2 class="text-xl font-bold">{e.name}</h2>
+                        <h2 class="text-md uppercase text-white/50 font-medium">{e.name}</h2>
+                        <hr class="mb-3 border-white/10" />
                         <div class="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-2">
                             {e.boxes?.map((a) => (
                                 <Box name={a.name} icon={a.icon} url={a.url} />

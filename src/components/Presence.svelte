@@ -11,10 +11,10 @@
     })
 </script>
 
-<div class="group h-20 max-w-md my-2 mx-auto block px-2 py-[0.55rem] relative bg-p-accent ring-1 rounded-md ring-p-accent-2">
+<div class="group h-20 max-w-md my-2 mx-auto block px-2 py-[0.55rem] relative bg-neutral-850 ring-1 rounded-md ring-neutral-800">
     {#if isLoading}
-        <div transition:fade class="absolute top-0 left-0 bg-p-bg rounded-md w-full h-full">
-            <div class="w-full h-full animate-pulse bg-p-bg-secondary" />
+        <div transition:fade class="absolute top-0 left-0 bg-neutral-900 rounded-md w-full h-full">
+            <div class="w-full h-full animate-pulse bg-neutral-800 rounded-md" />
         </div>
     {/if}
 
@@ -29,7 +29,7 @@
         </div>
         <div class="mx-4 w-fit h-full truncate">
             <a class="text-lg font-bold group-hover:underline" href={data?.url}>{data?.name}</a>
-            <p class="text-md text-p-secondary">{data?.artist}</p>
+            <p class="text-md text-zinc-400">{data?.artist}</p>
         </div>
     </div>
 </div>
