@@ -1,6 +1,7 @@
 ---
 import { Astronav, CloseIcon, MenuIcon, MenuItems, OpenIcon } from 'astro-navbar'
 import { Icon } from 'astro-icon/components'
+import Spacing from './Spacing.astro'
 ---
 
 <Astronav closeOnClick>
@@ -11,8 +12,7 @@ import { Icon } from 'astro-icon/components'
         </a>
 
         <MenuIcon>
-            <div
-                class="bg-neutral-850 ring-neutral-800 p-1 ring-1 rounded-md text-2xl hover:bg-neutral-800 transition-all hover:ease-out duration-500">
+            <div class="border-neutral-800 p-1 border rounded-md text-2xl hover:bg-neutral-800 transition-all hover:ease-out duration-500">
                 <OpenIcon>
                     <Icon name="ci:menu-alt-05" />
                 </OpenIcon>
@@ -23,21 +23,21 @@ import { Icon } from 'astro-icon/components'
             </div>
         </MenuIcon>
     </div>
-
-    <MenuItems class="bg-neutral-850 absolute right-4 ring-1 ring-neutral-800 rounded-md py-2 px-2 hidden">
+    <MenuItems class="bg-black absolute right-4 ring-1 ring-neutral-800 rounded-md py-2 px-2 hidden">
         <ul>
             <li>
-                <a href="/" class="hover:bg-neutral-900 py-1 px-2 rounded-md w-full inline-block transition-all hover:ease duration-300">Home</a>
+                <a href="/" class="hover:bg-neutral-800 py-1 px-2 rounded-md w-full inline-block transition-all hover:ease duration-300">Home</a>
             </li>
             <li>
-                <a href="/tech" class="hover:bg-neutral-900 py-1 px-2 rounded-md w-full inline-block transition-all hover:ease duration-300"
+                <a href="/tech" class="hover:bg-neutral-800 py-1 px-2 rounded-md w-full inline-block transition-all hover:ease duration-300"
                     >Technologies</a
                 >
             </li>
             <li>
-                <a href="/songs" class="hover:bg-neutral-900 py-1 px-2 rounded-md w-full inline-block transition-all hover:ease duration-300">Songs</a
+                <a href="/songs" class="hover:bg-neutral-800 py-1 px-2 rounded-md w-full inline-block transition-all hover:ease duration-300">Songs</a
                 >
             </li>
         </ul>
     </MenuItems>
 </Astronav>
+<Spacing />

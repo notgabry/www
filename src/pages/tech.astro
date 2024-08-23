@@ -30,12 +30,12 @@ const page = [
             {
                 name: 'HTML',
                 icon: 'devicon:html5',
-                url: 'https://it.wikipedia.org/wiki/HTML'
+                url: 'https://simple.wikipedia.org/wiki/HTML'
             },
             {
                 name: 'CSS',
                 icon: 'devicon:css3',
-                url: 'https://it.wikipedia.org/wiki/CSS'
+                url: 'https://simple.wikipedia.org/wiki/CSS'
             },
             {
                 name: 'TypeScript',
@@ -45,7 +45,7 @@ const page = [
             {
                 name: 'JavaScript',
                 icon: 'devicon:javascript',
-                url: 'https://it.wikipedia.org/wiki/JavaScript'
+                url: 'https://simple.wikipedia.org/wiki/JavaScript'
             },
             {
                 name: 'GoLang',
@@ -54,7 +54,7 @@ const page = [
             },
             {
                 name: 'Rust',
-                icon: 'devicon:rust',
+                icon: 'mdi:language-rust',
                 url: 'https://www.rust-lang.org/tools/install'
             },
             {
@@ -66,6 +66,11 @@ const page = [
                 name: 'Python',
                 icon: 'devicon:python',
                 url: 'https://www.python.org/downloads/'
+            },
+            {
+                name: 'Java',
+                icon: 'devicon:java',
+                url: 'https://www.java.com'
             },
             {
                 name: 'SvelteKit',
@@ -216,13 +221,12 @@ const page = [
     <main class="mt-10 max-w-2xl mx-auto space-y-6 px-4">
         <Head description="As you can see I don't really have a life" />
 
-        <div class="flex flex-col space-y-4">
+        <div class="flex flex-col space-y-5">
             {
                 page.map((e) => (
                     <section>
-                        <h2 class="text-md uppercase text-white/50 font-medium">{e.name}</h2>
-                        <hr class="mb-3 border-white/10" />
-                        <div class="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-2">
+                        <h2 class="text-md uppercase text-neutral-400 font-medium">{e.name}</h2>
+                        <div class="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-1">
                             {e.boxes?.map((a) => (
                                 <Box name={a.name} icon={a.icon} url={a.url} />
                             ))}

@@ -8,6 +8,10 @@
     }
 
     ::-webkit-scrollbar-thumb {
-        @apply bg-zinc-400 rounded-lg;
+        @apply bg-neutral-800 rounded-lg;
+    }
+
+    ::selection {
+        @apply bg-pink-600/55;
     }
 }

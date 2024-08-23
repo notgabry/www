@@ -1,48 +1,17 @@
 ---
 import Layout from '@layouts/Layout.astro'
-import Head from '@components/Head.astro'
-import Presence from '@components/Presence.svelte'
 import GenerateDynDate from '@modules/GenerateDynDate'
 
 const age = GenerateDynDate(new Date(2007, 9, 12))
 ---
 
 <Layout title="notgabry">
-    <main class="mt-10 max-w-2xl mx-auto space-y-6 px-4">
-        <section class="mb-9 text-center">
-            <Head description="Hello, world!" links />
-        </section>
-
-        <section class="py-4">
-            <h2 class="text-3xl font-bold">About Me</h2>
-            <p class="text-zinc-400">
-                I'm a {age}-year-old developer from Italy. Ever since I was little I've always been passionate about computers and how they operate,
-                now I'm learning new technologies or programming languages, like <strong>Go</strong> and <strong>Rust</strong> the two programmming languages
-                I love the most.
-            </p>
-        </section>
-
-        <section class="py-4">
-            <h2 class="text-3xl font-bold">Interests</h2>
-            <p class="text-zinc-400">
-                I've half a decade of experience with linux, I've tried different linux distros like <strong>Ubuntu 20</strong>, <strong
-                    >Manjaro</strong
-                >, <strong>Arch</strong>, <strong>Kali</strong> and <strong>Linux Mint</strong> the one I'm using right now.
-                <br />
-                In my spare time when I want to relax I play videogames like <strong>Valorant</strong>
-                <br />
-                I can't play without music, feel free to check out one of my most recent played songs...
-            </p>
-            <Presence client:load />
-        </section>
-
-        <section class="py-4">
-            <h2 class="text-3xl font-bold">Skills</h2>
-            <p class="text-zinc-400">
-                I've lots of experience with <strong>JavaScript</strong> and <strong>TypeScript</strong> also I practiced <strong>Python</strong> for over
-                a year, I'm recently moving my focus to <strong>Go</strong> and
-                <strong>Rust</strong>. <br />
-            </p>
-        </section>
+    <main class="max-w-4xl mx-auto px-4 mt-44">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-medium text-center leading-relaxed">
+            Hi I'm Gabry — a random {age}-year-old
+            <span class="border-b-4 border-purple-600 bg-purple-600 bg-opacity-45">with a passion</span> for
+            <span class="border-b-4 border-pink-600 bg-pink-600 bg-opacity-45">aviation</span> &
+            <span class="border-b-4 border-blue-600 bg-blue-600 bg-opacity-45">tech</span>
+        </h1>
     </main>
 </Layout>

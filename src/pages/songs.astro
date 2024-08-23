@@ -4,8 +4,6 @@ import Card from '@components/Card.svelte'
 import LastFmAPI from '@modules/Lastfm'
 import Head from '@components/Head.astro'
 
-import type { Lastfm } from '@modules/Spotify'
-
 const config = new URL(Astro.url)
 
 // a friend of mine wanted to get his stats
@@ -25,6 +23,7 @@ type artists = {
         }[]
     }
 }
+
 type tracks = {
     toptracks: {
         track: {
@@ -42,9 +41,28 @@ type tracks = {
     }
 }
 
+type recent = {
+    recenttracks: {
+        track: {
+            '@attr'?: {
+                nowplaying: boolean
+            }
+            artist: {
+                '#text': string
+            }
+            image: {
+                size: 'extralarge' | 'large' | 'medium' | 'small'
+                '#text': string
+            }[]
+            name: string
+            url: string
+        }[]
+    }
+}
+
 const artists = await LastFmAPI<artists>({ user, isOverall: true, method: 'user.gettopartists', limit: 6 })
 const songs = await LastFmAPI<tracks>({ user, isOverall: true, method: 'user.gettoptracks', limit: 6 })
-const recent = await LastFmAPI<Lastfm>({ user, isOverall: true, method: 'user.getrecenttracks', limit: 8 })
+const recent = await LastFmAPI<recent>({ user, isOverall: true, method: 'user.getrecenttracks', limit: 8 })
 ---
 
 <Layout title="notgabry">
@@ -57,7 +75,16 @@ const recent = await LastFmAPI<Lastfm>({ user, isOverall: true, method: 'user.ge
             <div class="grid gap-x-4 gap-y-4 md:grid-cols-2 pt-3">
                 {
                     recent.recenttracks.track.slice(0, 8).map((e) => {
-                        return <Card client:load title={e.name} sub={e.artist['#text']} url={e.url} image={e.image[3]['#text']} />
+                        return (
+                            <Card
+                                client:load
+                                title={e.name}
+                                sub={e.artist['#text']}
+                                url={e.url}
+                                image={e.image[3]['#text']}
+                                small={e['@attr']?.nowplaying && 'Now Playing'}
+                            />
+                        )
                     })
                 }
             </div>
@@ -69,7 +96,7 @@ const recent = await LastFmAPI<Lastfm>({ user, isOverall: true, method: 'user.ge
             <div class="grid gap-x-4 gap-y-4 md:grid-cols-2 pt-3">
                 {
                     artists.topartists.artist.map((e) => {
-                        return <Card client:load title={e.name} url={e.url} plays={e.playcount} image={e.image[3]['#text']} />
+                        return <Card client:load title={e.name} url={e.url} small={`${e.playcount} Plays`} image={e.image[3]['#text']} />
                     })
                 }
             </div>
@@ -81,7 +108,16 @@ const recent = await LastFmAPI<Lastfm>({ user, isOverall: true, method: 'user.ge
             <div class="grid gap-x-4 gap-y-4 md:grid-cols-2 pt-3">
                 {
                     songs.toptracks.track.map((e) => {
-                        return <Card client:load title={e.name} sub={e.artist.name} url={e.url} plays={e.playcount} image={e.image[3]['#text']} />
+                        return (
+                            <Card
+                                client:load
+                                title={e.name}
+                                sub={e.artist.name}
+                                url={e.url}
+                                small={`${e.playcount} Plays`}
+                                image={e.image[3]['#text']}
+                            />
+                        )
                     })
                 }
             </div>
