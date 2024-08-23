@@ -1,7 +1,6 @@
 ---
 import '@fontsource-variable/bricolage-grotesque'
 import '../styles/input.css'
-import { fade, ViewTransitions } from 'astro:transitions'
 const { title } = Astro.props
 import Navbar from '@components/Navbar.astro'
 ---
@@ -24,17 +23,13 @@ import Navbar from '@components/Navbar.astro'
         <link rel="shortcut icon" href="/gabry-icon.png" />
 
         <link rel="sitemap" href="/sitemap-index.xml" />
-
-        <ViewTransitions />
     </head>
 
     <body class="bg-black mb-16 text-white font-grotesque">
-        <header class="z-10 relative">
+        <header>
             <Navbar />
         </header>
 
-        <div class="z-0 relative" transition:animate={fade({ duration: 400 })}>
-            <slot />
-        </div>
+        <slot />
     </body>
 </html>
