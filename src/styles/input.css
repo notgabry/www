@@ -3,15 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-    ::-webkit-scrollbar {
-        @apply w-1;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        @apply bg-neutral-800 rounded-lg;
-    }
-
-    ::selection {
-        @apply bg-pink-600/55;
+    html,
+    body {
+        @apply bg-zinc-950 text-white font-poppins;
     }
 }

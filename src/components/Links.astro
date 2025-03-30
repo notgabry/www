@@ -1,0 +1,20 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const links: { name: string; url: string }[] = [
+    { name: 'GitHub', url: 'https://github.com/notgabry' },
+    { name: 'Chess', url: 'https://chess.com/member/missing-her-eyes' },
+    { name: 'Email', url: 'mailto:notgdev@proton.me' }
+]
+---
+
+<div class="flex flex-row gap-4 text-xl font-medium justify-center mt-12">
+    {
+        links.map(({ name, url }) => (
+            <a class="text-zinc-300 flex items-center underline gap-1" href={url}>
+                <Icon name="external-link" />
+                {name}
+            </a>
+        ))
+    }
+</div>

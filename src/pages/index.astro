@@ -1,17 +1,70 @@
 ---
 import Layout from '@layouts/Layout.astro'
-import GenerateDynDate from '@modules/GenerateDynDate'
-
-const age = GenerateDynDate(new Date(2007, 9, 12))
+import Spotify from '@components/Spotify.svelte'
+import Chess from '@components/Chess.svelte'
+import Links from '@components/Links.astro'
 ---
 
-<Layout title="notgabry">
-    <main class="max-w-4xl mx-auto px-4 mt-44">
-        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-medium text-center leading-relaxed">
-            Hi I'm Gabry — a random {age}-year-old
-            <span class="border-b-4 border-purple-600 bg-purple-600 bg-opacity-45">with a passion</span> for
-            <span class="border-b-4 border-pink-600 bg-pink-600 bg-opacity-45">aviation</span> &
-            <span class="border-b-4 border-blue-600 bg-blue-600 bg-opacity-45">tech</span>
-        </h1>
-    </main>
+<Layout title="Home">
+    <header class="flex flex-col items-center mt-8">
+        <nav class="max-w-2xl w-full justify-between flex">
+            <a class="text-zinc-300 hover:underline" href="mailto:notgdev@proton.me">notgdev@proton.me</a>
+            <a class="text-zinc-300 underline" href="https://github.com/notgabry">GitHub</a>
+        </nav>
+
+        <div class="w-32 aspect-square rounded-full overflow-hidden mt-16">
+            <img class="hover:animate-spin" src="/static/gabry.png" alt="My Avatar" />
+        </div>
+    </header>
+
+    <section class="flex mx-auto max-w-2xl flex-col mt-8">
+        <div class="flex font-bold text-3xl mx-auto mt-8">
+            <h1>
+                Hello, I'm gabry, a <span class="text-rose-300">passionate</span>
+                <span class="text-emerald-300">developer</span> with half a decade of <span class="text-violet-300">experience</span>
+            </h1>
+        </div>
+
+        <div class="mt-8 text-base text-zinc-300 font-medium flex flex-col gap-y-4">
+            <p>
+                With expertise in Go, TypeScript, and JavaScript, I've contributed to numerous projects, from backend services to scalable web
+                applications.
+            </p>
+
+            <p>Recently, I've expanded my skill set to include Rust, fueling my passion for innovation.</p>
+
+            <p>I'm dedicated to delivering high-quality solutions using cutting-edge technologies and agile methodologies.</p>
+        </div>
+    </section>
+
+    <section class="mt-44 sm:mt-96 max-w-4xl mx-auto space-y-16" id="stats">
+        <div class="max-w-lg">
+            <h2 class="text-2xl font-bold">
+                <span class="text-w-accent-1">Recently</span> I've been picking up <span class="text-w-accent-2">chess</span> again, take a <span
+                    class="text-w-accent-3">look</span
+                > at my <span class="text-w-accent-4">poor stats</span>
+            </h2>
+            <Chess client:load />
+        </div>
+
+        <div class="max-w-lg ml-auto">
+            <h2 class="text-2xl font-bold">
+                I <span class="text-w-accent-5">can't</span> live <span class="text-w-accent-6">without music</span>, checkout the last <span
+                    class="text-w-accent-7">song</span
+                > I was listening to <span class="text-w-accent-8">on spotify</span>
+            </h2>
+            <Spotify client:load />
+        </div>
+    </section>
+
+    <section class="mt-44 max-w-4xl mx-auto mb-32">
+        <div class="max-w-2xl">
+            <h1 class="text-3xl font-bold">
+                If you have a <span class="text-w-accent-9">great idea</span> for a <span class="text-w-accent-10">project</span> feel free to <span
+                    class="text-w-accent-11">contact</span
+                > me
+            </h1>
+        </div>
+        <Links />
+    </section>
 </Layout>

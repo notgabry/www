@@ -1,15 +1,16 @@
 ---
-import '@fontsource-variable/bricolage-grotesque'
+import '@fontsource/poppins/400.css'
+import '@fontsource/poppins/500.css'
+import '@fontsource/poppins/700.css'
 import '../styles/input.css'
 const { title } = Astro.props
-import Navbar from '@components/Navbar.astro'
 ---
 
 <!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>{title}</title>
+        <title>{title} | notgabry</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content="Modern & Minimal ❤" />
@@ -19,17 +20,13 @@ import Navbar from '@components/Navbar.astro'
         <meta property="og:description" content="Modern & Minimal ❤" />
         <meta property="theme-color" content="#A9A7F1" />
 
-        <link rel="icon" href="/gabry-icon.png" />
-        <link rel="shortcut icon" href="/gabry-icon.png" />
+        <link rel="icon" href="/static/gabry-icon.png" />
+        <link rel="shortcut icon" href="/static/gabry-icon.png" />
 
         <link rel="sitemap" href="/sitemap-index.xml" />
     </head>
 
-    <body class="bg-black mb-16 text-white font-grotesque">
-        <header>
-            <Navbar />
-        </header>
-
+    <body class="mx-4">
         <slot />
     </body>
 </html>
