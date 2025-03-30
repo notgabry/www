@@ -12,6 +12,6 @@ export default defineConfig({
             enabled: true
         }
     }),
-    output: 'hybrid',
+    output: 'server',
     publicDir: './static'
 })
