@@ -8,7 +8,6 @@
 
     onMount(async () => {
         data = await fetch('/api/spotify.json').then((c) => c.json())
-        console.log(data)
     })
 </script>
 
@@ -26,7 +25,7 @@
             <p class="text-base text-zinc-300">{data?.artist}</p>
         </div>
 
-        <div class="text-sm ring-1 ring-purple-600/40 text-purple-600 bg-purple-600/10 whitespace-nowrap ml-auto px-2 py-1 rounded-md">
+        <div class="text-sm ring-1 ring-purple-600/40 text-purple-500 bg-purple-600/10 whitespace-nowrap ml-auto px-2 py-1 rounded-md">
             {data?.nowplaying ? 'Now Playing' : 'Last Played'}
         </div>
     </div>

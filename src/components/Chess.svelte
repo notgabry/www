@@ -13,8 +13,8 @@
 </script>
 
 <p class={`text-6xl font-bold ${isLoading ? 'blur-md text-transparent' : 'transition-all ease-in-out duration-1000 blur-0'}`}>
-    {data?.chess_blitz.last.rating || 400} blitz
+    {data?.chess_blitz?.last.rating || 400} blitz
 </p>
 <p class={`text-6xl font-bold ${isLoading ? 'blur-md text-transparent' : 'transition-all ease-in-out duration-1000 blur-0'}`}>
-    {data?.chess_rapid.last.rating || 400} rapid
+    {data?.chess_rapid?.last.rating || 400} rapid
 </p>
